@@ -11,42 +11,53 @@
 |
 */
 
-use Vluzrmos\SlackApi\SlackApiFacade as SlackApi;
-use Illuminate\Support\Facades\Artisan;
-
-function slackRtm(){
-    return SlackApi::get('rtm.start');
-}
-
-function slackTotals($force = false){
-    /** @var Illuminate\Contracts\Cache\ $cache */
-    $cache = app('cache');
-
-    return $cache->get('slack.totals', ['active' => 0, 'total' => 0]);
-};
-
-
-$app->get('/', function() use ($app) {
-    $totals = slackTotals();
-
-    return view('slack.index', compact('totals'));
+$app->get('/', function () {
+    return view('socketio');
 });
 
-$app->get('/slackapi', function() use ($app) {
-    $slackRtm = slackRtm();
+$app->get('/message', function (){
+    publish('channel', 'awesome-event', ["message" => 'Something awesome happened!']);
 
-    return $slackRtm;
+    return 'OK';
 });
 
-$app->get('/socket', function() use ($app) {
-    return view('app');
-});
-
-$app->get('/message', function() use ($app) {
-    /** @var Pusher $pusher */
-    $pusher = app('pusher');
-
-    $pusher->trigger('local', 'MessageSent', ['message' => 'Its done! - at '.\Carbon\Carbon::now()]);
-
-    return 'ok';
-});
+//
+//use Vluzrmos\SlackApi\SlackApiFacade as SlackApi;
+//use Illuminate\Support\Facades\Artisan;
+//
+//function slackRtm(){
+//    return SlackApi::get('rtm.start');
+//}
+//
+//function slackTotals($force = false){
+//    /** @var Illuminate\Contracts\Cache\Factory $cache */
+//    $cache = app('cache');
+//
+//    return $cache->get('slack.totals', ['active' => 0, 'total' => 0]);
+//};
+//
+//
+//$app->get('/', function() use ($app) {
+//    $totals = slackTotals();
+//
+//    return view('slack.index', compact('totals'));
+//});
+//
+//$app->get('/slackapi', function() use ($app) {
+//    $slackRtm = slackRtm();
+//
+//    return $slackRtm;
+//});
+//
+//$app->get('/socket', function() use ($app) {
+//    return view('app');
+//});
+//
+//$app->get('/message', function() use ($app) {
+//    /** @var Pusher $pusher */
+//    $pusher = app('pusher');
+//
+//    $pusher->trigger('local', 'MessageSent', ['message' => 'Its done! - at '.\Carbon\Carbon::now()]);
+//
+//    return 'ok';
+//});

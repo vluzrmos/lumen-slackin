@@ -1,3 +1,6 @@
 /lumen.log
+/.idea
 /vendor
+/workbench
+/node_modules
 .env

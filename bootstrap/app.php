@@ -82,6 +82,8 @@ $app->register('App\Providers\AppServiceProvider');
 
 $app->register('Vluzrmos\SlackApi\SlackApiServiceProvider');
 
+$app->register('Vluzrmos\Socketio\SocketioServiceProvider');
+
 $app->register('Vinkla\Pusher\PusherServiceProvider');
 
 /**
