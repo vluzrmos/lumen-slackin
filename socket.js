@@ -6,7 +6,7 @@ var Redis = require('ioredis');
 
 var redis = new Redis('redis://127.0.0.1:6379/0');
 
-redis.subscribe('channel', function(err, count){
+redis.subscribe('local', function(err, count){
 
 });
 

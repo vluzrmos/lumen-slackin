@@ -11,53 +11,24 @@
 |
 */
 
-$app->get('/', function () {
-    return view('socketio');
+use Vluzrmos\SlackApi\SlackApiFacade as SlackApi;
+use \App\Console\Commands\SlackStatusCommand as SlackStatus;
+
+function slackRtm(){
+    return SlackApi::get('rtm.start');
+}
+
+function slackTotals(){
+    /** @var Illuminate\Contracts\Cache\Factory $cache */
+    $cache = app('cache');
+
+    return $cache->get(SlackStatus::SLACK_TOTALS_KEY, ['active' => 0, 'total' => 0]);
+};
+
+
+$app->get('/', function() use ($app) {
+    $totals = slackTotals();
+
+    return view('slack.index', compact('totals'));
 });
 
-$app->get('/message', function (){
-    publish('channel', 'awesome-event', ["message" => 'Something awesome happened!']);
-
-    return 'OK';
-});
-
-//
-//use Vluzrmos\SlackApi\SlackApiFacade as SlackApi;
-//use Illuminate\Support\Facades\Artisan;
-//
-//function slackRtm(){
-//    return SlackApi::get('rtm.start');
-//}
-//
-//function slackTotals($force = false){
-//    /** @var Illuminate\Contracts\Cache\Factory $cache */
-//    $cache = app('cache');
-//
-//    return $cache->get('slack.totals', ['active' => 0, 'total' => 0]);
-//};
-//
-//
-//$app->get('/', function() use ($app) {
-//    $totals = slackTotals();
-//
-//    return view('slack.index', compact('totals'));
-//});
-//
-//$app->get('/slackapi', function() use ($app) {
-//    $slackRtm = slackRtm();
-//
-//    return $slackRtm;
-//});
-//
-//$app->get('/socket', function() use ($app) {
-//    return view('app');
-//});
-//
-//$app->get('/message', function() use ($app) {
-//    /** @var Pusher $pusher */
-//    $pusher = app('pusher');
-//
-//    $pusher->trigger('local', 'MessageSent', ['message' => 'Its done! - at '.\Carbon\Carbon::now()]);
-//
-//    return 'ok';
-//});
