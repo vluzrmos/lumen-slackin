@@ -12,10 +12,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        /**
-         * Lumen Laravel 5 Packages Compatibility
-         */
 
-        $this->app->configure('pusher');
     }
 }

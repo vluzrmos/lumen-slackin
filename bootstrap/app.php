@@ -91,13 +91,6 @@ $app->register('Vinkla\Pusher\PusherServiceProvider');
  */
 class_alias('Vluzrmos\SlackApi\SlackApiFacade', 'SlackApi');
 
-/**
- * Vinkla\Pusher Facade
- */
-class_alias('Vinkla\Pusher\Facades\Pusher', 'VinklaPusher');
-
-
-
 /*
 |--------------------------------------------------------------------------
 | Load The Application Routes
