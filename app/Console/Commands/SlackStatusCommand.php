@@ -32,7 +32,8 @@ class SlackStatusCommand extends Command{
     protected $broadcast;
 
     /**
-     * @param Cache         $cache
+     * @param Cache $cache Default cache provider
+     * @param Broadcast $broadcast default socket provider
      */
     public function __construct(Cache $cache, Broadcast $broadcast){
         parent::__construct();
@@ -47,14 +48,52 @@ class SlackStatusCommand extends Command{
      *  Performs the event
      */
     public function fire(){
-        $oldTotals = $this->cache->get(SELF::SLACK_TOTALS_KEY);
+        $this->info("Retrieving previews cached status...");
 
+        $oldTotals = $this->getCachedUsersStatus();
+
+        $this->info("Checking for new status...");
+        $totals = $this->getUsersStatus();
+
+        $this->info("Caching the results...");
+        $this->setCachedUsersStatus($totals);
+
+        if($oldTotals != $totals){
+            $this->info("Broadcasting changed status...");
+            $this->broadcast->publish('local', 'UsersActivity', $totals);
+        }
+        else{
+            $this->info("Status not changed!");
+        }
+
+        $this->info("Done!");
+    }
+
+    /**
+     * Get the previews cached users status
+     * @return array
+     */
+    public function getCachedUsersStatus(){
+        return $this->cache->get(SELF::SLACK_TOTALS_KEY, $this->getEmptyStatus());
+    }
+
+    /**
+     * Set the new users status
+     * @param array $totals
+     * @return mixed
+     */
+    public function setCachedUsersStatus($totals = []){
+        $this->cache->forever(self::SLACK_TOTALS_KEY, empty($totals)?$this->getEmptyStatus():$totals);
+    }
+
+    /**
+     * Return the total users and logged users
+     * @return array
+     */
+    protected function getUsersStatus(){
         $rtm = SlackApi::get('rtm.start');
 
-        $totals = [
-            'active' => 0,
-            'total'  => 0
-        ];
+        $totals = $this->getEmptyStatus();
 
         foreach($rtm['users'] as $user){
             if($this->isRealUser($user)){
@@ -66,11 +105,18 @@ class SlackStatusCommand extends Command{
             }
         }
 
-        $this->cache->forever(self::SLACK_TOTALS_KEY, $totals);
+        return $totals;
+    }
 
-        if($oldTotals != $totals){
-            $this->broadcast->publish('local', 'UsersActivity', $totals);
-        }
+    /**
+     * Get an empty array of user status
+     * @return array
+     */
+    public function getEmptyStatus(){
+        return [
+            'active' => 0,
+            'total' => 0
+        ];
     }
 
     /**
