@@ -84,8 +84,6 @@ $app->register('Vluzrmos\SlackApi\SlackApiServiceProvider');
 
 $app->register('Vluzrmos\Socketio\SocketioServiceProvider');
 
-$app->register('Vinkla\Pusher\PusherServiceProvider');
-
 /**
  * Register SlackApi facade
  */

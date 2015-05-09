@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "025dd6122219da550d9aa5d3ba6d87e8",
+    "hash": "78c79d142701e8d48f64656188cbc4fb",
     "packages": [
         {
             "name": "danielstjules/stringy",
@@ -128,63 +128,6 @@
                 "string"
             ],
             "time": "2014-12-20 21:24:13"
-        },
-        {
-            "name": "graham-campbell/manager",
-            "version": "v2.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/GrahamCampbell/Laravel-Manager.git",
-                "reference": "17c2e2f3282bd795c136487928edb79dc8335a33"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Manager/zipball/17c2e2f3282bd795c136487928edb79dc8335a33",
-                "reference": "17c2e2f3282bd795c136487928edb79dc8335a33",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/contracts": "5.0.*",
-                "illuminate/support": "5.0.*",
-                "php": ">=5.4.7"
-            },
-            "require-dev": {
-                "graham-campbell/testbench": "~2.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.0-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "GrahamCampbell\\Manager\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Graham Campbell",
-                    "email": "graham@mineuk.com"
-                }
-            ],
-            "description": "Manager Provides Some Manager Functionality For Laravel 5",
-            "keywords": [
-                "Graham Campbell",
-                "GrahamCampbell",
-                "Laravel Manager",
-                "Laravel-Manager",
-                "connector",
-                "framework",
-                "interface",
-                "laravel",
-                "manager"
-            ],
-            "time": "2015-02-05 20:11:50"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -1483,16 +1426,16 @@
         },
         {
             "name": "laravel/lumen-framework",
-            "version": "v5.0.8",
+            "version": "v5.0.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/lumen-framework.git",
-                "reference": "a5789dcb535434659489cbe15d07d93861ba131a"
+                "reference": "b7734d6151ae3809db93d8fc30d1ed5d3541b84e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/lumen-framework/zipball/a5789dcb535434659489cbe15d07d93861ba131a",
-                "reference": "a5789dcb535434659489cbe15d07d93861ba131a",
+                "url": "https://api.github.com/repos/laravel/lumen-framework/zipball/b7734d6151ae3809db93d8fc30d1ed5d3541b84e",
+                "reference": "b7734d6151ae3809db93d8fc30d1ed5d3541b84e",
                 "shasum": ""
             },
             "require": {
@@ -1567,7 +1510,7 @@
                 "laravel",
                 "lumen"
             ],
-            "time": "2015-04-27 14:47:54"
+            "time": "2015-05-08 12:58:04"
         },
         {
             "name": "league/flysystem",
@@ -1771,21 +1714,21 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "1.18.0",
+            "version": "1.19.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "99e2f69f7bdc2cc4334b2d00f1e0ba450623ea36"
+                "reference": "68868e0b02d2d803d0052a59d4e5003cccf87320"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/99e2f69f7bdc2cc4334b2d00f1e0ba450623ea36",
-                "reference": "99e2f69f7bdc2cc4334b2d00f1e0ba450623ea36",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/68868e0b02d2d803d0052a59d4e5003cccf87320",
+                "reference": "68868e0b02d2d803d0052a59d4e5003cccf87320",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.0",
-                "symfony/translation": "2.6.*"
+                "symfony/translation": "~2.6"
             },
             "require-dev": {
                 "phpunit/phpunit": "~4.0"
@@ -1814,7 +1757,7 @@
                 "datetime",
                 "time"
             ],
-            "time": "2015-03-26 03:05:57"
+            "time": "2015-05-09 03:23:44"
         },
         {
             "name": "nikic/fast-route",
@@ -1946,128 +1889,6 @@
                 "psr-3"
             ],
             "time": "2012-12-21 11:40:51"
-        },
-        {
-            "name": "ptrofimov/tinyredisclient",
-            "version": "1.1.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/ptrofimov/tinyredisclient.git",
-                "reference": "7b8d487afa41b74e30d1a68400d89c12d9b82b6f"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/ptrofimov/tinyredisclient/zipball/7b8d487afa41b74e30d1a68400d89c12d9b82b6f",
-                "reference": "7b8d487afa41b74e30d1a68400d89c12d9b82b6f",
-                "shasum": ""
-            },
-            "type": "library",
-            "autoload": {
-                "classmap": [
-                    "src/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Petr Trofimov",
-                    "email": "petrofimov@yandex.ru",
-                    "homepage": "https://github.com/ptrofimov"
-                }
-            ],
-            "description": "The most lightweight Redis client written in PHP",
-            "homepage": "https://github.com/ptrofimov/tinyredisclient",
-            "keywords": [
-                "client",
-                "redis"
-            ],
-            "time": "2013-04-09 19:16:58"
-        },
-        {
-            "name": "pusher/pusher-php-server",
-            "version": "v2.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/pusher/pusher-http-php.git",
-                "reference": "64ac86e757ed3349bc172b4069b972d99ba47400"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/pusher/pusher-http-php/zipball/64ac86e757ed3349bc172b4069b972d99ba47400",
-                "reference": "64ac86e757ed3349bc172b4069b972d99ba47400",
-                "shasum": ""
-            },
-            "require": {
-                "ext-curl": "*",
-                "php": ">=5.2"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "3.7.*"
-            },
-            "type": "library",
-            "autoload": {
-                "classmap": [
-                    "lib/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "Library for interacting with the Pusher REST API",
-            "homepage": "https://github.com/pusher/pusher-php-server",
-            "keywords": [
-                "events",
-                "php-pusher-server",
-                "publish",
-                "pusher",
-                "realtime",
-                "rest",
-                "trigger"
-            ],
-            "time": "2015-01-26 10:56:45"
-        },
-        {
-            "name": "rase/socket.io-emitter",
-            "version": "0.7.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/rase-/socket.io-php-emitter.git",
-                "reference": "82e1f27f04c02cc88fc4d986fc17a799390e7986"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/rase-/socket.io-php-emitter/zipball/82e1f27f04c02cc88fc4d986fc17a799390e7986",
-                "reference": "82e1f27f04c02cc88fc4d986fc17a799390e7986",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3",
-                "ptrofimov/tinyredisclient": "1.1.1"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "3.7.*"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "SocketIO\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "A PHP implementation of socket.io-emitter",
-            "homepage": "https://github.com/rase-/socket.io-php-emitter",
-            "keywords": [
-                "Socket.io",
-                "emit"
-            ],
-            "time": "2014-11-22 15:43:44"
         },
         {
             "name": "react/promise",
@@ -2707,68 +2528,6 @@
             "time": "2015-03-31 08:12:29"
         },
         {
-            "name": "vinkla/pusher",
-            "version": "1.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/vinkla/pusher.git",
-                "reference": "32c9431a47fe6083acfbd2353c21431f1307bedf"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/vinkla/pusher/zipball/32c9431a47fe6083acfbd2353c21431f1307bedf",
-                "reference": "32c9431a47fe6083acfbd2353c21431f1307bedf",
-                "shasum": ""
-            },
-            "require": {
-                "graham-campbell/manager": "~2.0",
-                "illuminate/contracts": "~5.0",
-                "illuminate/support": "~5.0",
-                "php": ">=5.4.7",
-                "pusher/pusher-php-server": "~2.0"
-            },
-            "require-dev": {
-                "graham-campbell/testbench": "~2.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Vinkla\\Pusher\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Vincent Klaiber",
-                    "email": "me@vinkla.com",
-                    "homepage": "http://vinkla.com"
-                }
-            ],
-            "description": "Laravel 5 wrapper for the Pusher HTTP API.",
-            "homepage": "https://github.com/vinkla/pusher",
-            "keywords": [
-                "api",
-                "events",
-                "http",
-                "laravel",
-                "php-pusher-server",
-                "publish",
-                "pusher",
-                "realtime",
-                "rest",
-                "trigger"
-            ],
-            "time": "2015-02-09 20:17:19"
-        },
-        {
             "name": "vlucas/phpdotenv",
             "version": "v1.1.0",
             "source": {
@@ -2818,6 +2577,54 @@
                 "environment"
             ],
             "time": "2014-12-05 15:19:21"
+        },
+        {
+            "name": "vluzrmos/lumen-socketio",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/vluzrmos/lumen-socketio.git",
+                "reference": "a1d86640792d36dbebb6ba8a8e0db1886303b0b4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/vluzrmos/lumen-socketio/zipball/a1d86640792d36dbebb6ba8a8e0db1886303b0b4",
+                "reference": "a1d86640792d36dbebb6ba8a8e0db1886303b0b4",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/redis": "~5.0",
+                "illuminate/support": "5.0.*",
+                "predis/predis": "~1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Vluzrmos\\": "src/Vluzrmos/"
+                },
+                "files": [
+                    "src/Vluzrmos/Socketio/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "DBAD"
+            ],
+            "authors": [
+                {
+                    "name": "Vagner do Carmo",
+                    "email": "vluzrmos@gmail.com"
+                }
+            ],
+            "description": "The Laravel Lumen Socketio Broadcasting.",
+            "keywords": [
+                "Broadcasting",
+                "Socket.io",
+                "WebSockets",
+                "laravel",
+                "lumen"
+            ],
+            "time": "2015-05-09 08:23:19"
         },
         {
             "name": "vluzrmos/slack-api",
@@ -3824,7 +3631,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "vluzrmos/lumen-socketio": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
