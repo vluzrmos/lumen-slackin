@@ -17,14 +17,14 @@
     "autoload": {
         "psr-4": {
             "App\\": "app/",
-            "Vluzrmos\\":"workbench/vluzrmos/lumen-socketio/src/Vluzrmos/"
+            "Vluzrmos\\":"./../lumen-socketio/src/Vluzrmos/"
         },
         "classmap": [
             "database/"
         ],
         "files":[
           "compat_l5.php",
-          "workbench/vluzrmos/lumen-socketio/src/Vluzrmos/Socketio/helpers.php"
+          "./../lumen-socketio/src/Vluzrmos/Socketio/helpers.php"
         ]
     },
     "autoload-dev": {

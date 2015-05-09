@@ -1,5 +1,7 @@
 /lumen.log
 /.idea
+/.idea/workspace.xml
+
 /vendor
 /workbench
 /node_modules

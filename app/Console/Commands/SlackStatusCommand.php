@@ -6,7 +6,7 @@ use Illuminate\Cache\CacheManager;
 use Illuminate\Console\Command;
 use Illuminate\Contracts\Cache\Factory as Cache;
 use Vluzrmos\SlackApi\SlackApiFacade as SlackApi;
-use Vluzrmos\Socketio\Broadcast;
+use Vluzrmos\Socketio\Contracts\Broadcast;
 
 class SlackStatusCommand extends Command{
 
