@@ -11,24 +11,7 @@
 |
 */
 
-use Vluzrmos\SlackApi\SlackApiFacade as SlackApi;
-use \App\Console\Commands\SlackStatusCommand as SlackStatus;
-
-function slackRtm(){
-    return SlackApi::get('rtm.start');
-}
-
-function slackTotals(){
-    /** @var Illuminate\Contracts\Cache\Factory $cache */
-    $cache = app('cache');
-
-    return $cache->get(SlackStatus::SLACK_TOTALS_KEY, ['active' => 0, 'total' => 0]);
-};
-
-
-$app->get('/', function() use ($app) {
-    $totals = slackTotals();
-
-    return view('slack.index', compact('totals'));
+$app->group(['namespace' => 'App\Http\Controllers'], function() use($app){
+    $app->get('/', 'IndexController@getIndex');
 });
 
