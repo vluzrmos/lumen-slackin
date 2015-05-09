@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'users_online' => 'There is <b class="users-online">:active</b> user online now of <b>:total</b>  registred. | There are <b class="counter-ative-users">:active</b> users online of <b class="users-total">:total</b> registred.'
+    'users_online' => '{0}There is no online users of <b class="users-total">:total</b> registred.|{1}There is <b class="users-online">:active</b> online user of <b class="users-total">:total</b> registred.|There are <b class="users-online">:active</b> online users online of <b class="users-total">:total</b> registred.'
 ];

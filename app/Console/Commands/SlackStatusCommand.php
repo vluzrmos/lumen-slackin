@@ -74,7 +74,7 @@ class SlackStatusCommand extends Command{
      * @return array
      */
     public function getCachedUsersStatus(){
-        return $this->cache->get(SELF::SLACK_TOTALS_KEY, $this->getEmptyStatus());
+        return $this->cache->get(self::SLACK_TOTALS_KEY, $this->getEmptyStatus());
     }
 
     /**
