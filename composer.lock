@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "4b19a20ead5ee643d2145f557d12ac42",
+    "hash": "4136050081f80232cf9726410f28ba8b",
     "packages": [
         {
             "name": "danielstjules/stringy",
@@ -2701,7 +2701,7 @@
         },
         {
             "name": "vluzrmos/lumen-socketio",
-            "version": "dev-master",
+            "version": "v0.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vluzrmos/lumen-socketio.git",
@@ -3753,7 +3753,6 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "vluzrmos/lumen-socketio": 20,
         "mariuzzo/laravel-js-localization": 20
     },
     "prefer-stable": false,

@@ -10,7 +10,7 @@
         "vluzrmos/slack-api": "0.0.*",
         "predis/predis": "~1.0",
         "illuminate/redis": "~5.0",
-        "vluzrmos/lumen-socketio":"@dev",
+        "vluzrmos/lumen-socketio":"~0.1",
         "mariuzzo/laravel-js-localization":"dev-master"
     },
     "require-dev": {
