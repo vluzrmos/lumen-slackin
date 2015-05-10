@@ -44,11 +44,18 @@ Start the socket.io server:
 forever start socket.js
 ```
 
+The socket.io server will run at localhost:8080, if you need, modify it on <code>socket.js</code> file.
+
 Start the http server:
 
 ```bash
 php artisan serve
 ```
+
+By default, artisan serve starts on port 8000, 
+if you need just change by passing <code>--port=NUMBER</code> or 
+just make a VirtualHost on your server (Apache or Nginx) with DocumentRoot on 
+<code>/path/to/that/project/public/</code> path.
 
 ## License
 
