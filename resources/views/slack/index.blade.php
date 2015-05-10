@@ -1,25 +1,6 @@
 @extends('app')
 
 @section('content')
-<style>
-    #message, #status, #logo, #validation-message{
-        text-align:center
-    }
-
-    .container{
-        margin-top: 50px;
-    }
-
-    #validation-message{
-        margin: 20px;
-    }
-
-    #logo{
-        margin:10px
-    }
-
-</style>
-
 <div class="container">
     <div class="row">
         <div class="col-sm-8 col-sm-offset-2" >

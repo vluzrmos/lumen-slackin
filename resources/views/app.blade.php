@@ -35,6 +35,8 @@
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     @endif
 
+    <link rel="stylesheet" href="{{url('css/app.css')}}"/>
+
     <script type="text/javascript" src="{{url('js/messages.js')}}"></script>
     <script type="text/javascript">Lang.setLocale('{{config('app.locale')}}');</script>
     <script type="text/javascript" src="{{url('js/app.js')}}"></script>
@@ -44,6 +46,10 @@
 </head>
 <body>
     @yield('content')
+
+    <div id="footer">
+        Made with <i class="glyphicon glyphicon-heart" style="color: red;"></i> by <a href="https://github.com/vluzrmos" target="_blank">Vluzrmos</a> + <a href="http://lumen.laravel.com" target="_blank">Lumen Framework</a>, fork me on <a href="https://github.com/vluzrmos/lumen-slackin" target="_blank">Github</a>.
+    </div>
 </body>
 </html>
 

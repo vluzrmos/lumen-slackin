@@ -1,0 +1,24 @@
+#message, #status, #logo, #validation-message{
+    text-align:center
+}
+
+.container{
+    margin-top: 125px;
+}
+
+#validation-message{
+    margin: 20px;
+}
+
+#logo{
+    margin:10px
+}
+
+#footer{
+    position:absolute;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+    opacity: 0.65;
+    margin-bottom: 10px
+}
