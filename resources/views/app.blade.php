@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{config('app.locale')}}">
+<html lang="{{app('translator')->locale()}}">
 
 <head>
     <meta charset="UTF-8">
@@ -34,7 +34,7 @@
                 port: '{{env('WS_PORT')}}'||'8080'
             };
         </script>
-        <script type="text/javascript">Lang.setLocale('{{config('app.locale')}}');</script>
+        <script type="text/javascript">Lang.setLocale("{{app('translator')->locale()}}");</script>
         <script type="text/javascript" src="{{url('js/app.js')}}"></script>
     @else
         <link rel="stylesheet" href="{{url('css/all.css')}}"/>
@@ -51,7 +51,7 @@
                 port: "{{env('WS_PORT')}}"||'8080'
             };
         </script>
-        <script type="text/javascript">Lang.setLocale("{{config('app.locale')}}");</script>
+        <script type="text/javascript">Lang.setLocale("{{app('translator')->locale()}}");</script>
         <script type="text/javascript" src="{{url('js/app.min.js')}}"></script>
     @endif
 </head>

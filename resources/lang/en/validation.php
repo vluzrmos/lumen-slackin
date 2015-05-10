@@ -105,7 +105,7 @@ return [
     */
 
     'attributes' => [
-        'username' => 'nome',
+        'username' => 'name',
         'email' => 'e-mail'
     ],
 
