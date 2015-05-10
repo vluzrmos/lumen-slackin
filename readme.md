@@ -18,7 +18,7 @@ npm install --save express http-server redis ioredis socket.io
 
 To run the websocket server in background, I recommend you the package [Forever](https://www.npmjs.com/package/forever):
 
-``bash
+```bash
 npm install -g forever
 ```
 
