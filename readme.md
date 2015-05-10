@@ -44,7 +44,7 @@ Start the socket.io server:
 forever start socket.js
 ```
 
-The socket.io server will run at localhost:8080, if you need, modify it on <code>socket.js</code> and <code>public/js/app.js</code> files.
+The socket.io server will run at localhost:8080, if you need to modify it, just change it on <code>socket.js</code> and <code>public/js/app.js</code> files.
 
 Start the http server:
 
@@ -53,7 +53,7 @@ php artisan serve
 ```
 
 By default, artisan serve starts on port 8000, 
-if you need just change by passing <code>--port=NUMBER</code> or 
+if you want to modify it, just starts it by passing <code>--port=NUMBER</code> or 
 just make a VirtualHost on your server (Apache or Nginx) with DocumentRoot on 
 <code>/path/to/that/project/public/</code> path.
 
