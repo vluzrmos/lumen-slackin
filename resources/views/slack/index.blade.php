@@ -18,7 +18,7 @@
         <div id="form-invite" class="col-sm-6 col-sm-offset-3">
             <div id="validation-message"></div>
 
-            <form action="{{url('/invite')}}" method="post" class="form-horizontal" role="form" onsubmit="return false">
+            <form action="{{url('/invite')}}" method="post" class="form-horizontal" role="form">
                 <input type="hidden" name="_token" value="{{csrf_token()}}"/>
 
                 <div class="form-group">

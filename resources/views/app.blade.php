@@ -45,20 +45,20 @@
             var app = app||{};
             app.config = app.config||{};
 
-            app.config.debug = Number.parseInt('{{env('APP_DEBUG')}}');
+            app.config.debug = Number.parseInt("{{env('APP_DEBUG')}}");
             app.config.websocket = {
-                host: '{{env('WS_HOST')}}'||window.location.hostname,
-                port: '{{env('WS_PORT')}}'||'8080'
+                host: "{{env('WS_HOST')}}"||window.location.hostname,
+                port: "{{env('WS_PORT')}}"||'8080'
             };
         </script>
-        <script type="text/javascript">Lang.setLocale('{{config('app.locale')}}');</script>
-        <script type="javascript" src="{{url('js/app.min.js')}}"></script>
+        <script type="text/javascript">Lang.setLocale("{{config('app.locale')}}");</script>
+        <script type="text/javascript" src="{{url('js/app.min.js')}}"></script>
     @endif
 </head>
 <body>
-<div class="container">
-    @yield('content')
-</div>
+    <div class="container">
+        @yield('content')
+    </div>
     <div id="footer">
         {!!trans('messages.copyright')!!}
     </div>
