@@ -16,8 +16,11 @@ $app->group(['namespace' => 'App\Http\Controllers'], function() use($app){
 });
 
 $app->get('/random', function() use ($app){
-    Cache::forever(\App\Console\Commands\SlackStatusCommand::SLACK_TOTALS_KEY, ['total' => 1, 'active' => 1]);
-    publish('local', 'UsersActivity', ['total' => 1, 'active' => 1]);
+    $totals = ['total' => $app->request->input('total', 1), 'active' => $app->request->input('active', 1)];
+
+    Cache::forever(\App\Console\Commands\SlackStatusCommand::SLACK_TOTALS_KEY, $totals);
+
+    publish('local', 'UsersActivity', $totals);
 
     return 'OK';
 });

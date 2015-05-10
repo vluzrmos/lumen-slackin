@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "78c79d142701e8d48f64656188cbc4fb",
+    "hash": "189e35c89c915abe47a6c25bc720d0a6",
     "packages": [
         {
             "name": "danielstjules/stringy",
@@ -2528,6 +2528,52 @@
             "time": "2015-03-31 08:12:29"
         },
         {
+            "name": "tedivm/jshrink",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tedious/JShrink.git",
+                "reference": "7575d9d96f113bc7c1c28ec8231ee086751a9078"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tedious/JShrink/zipball/7575d9d96f113bc7c1c28ec8231ee086751a9078",
+                "reference": "7575d9d96f113bc7c1c28ec8231ee086751a9078",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "fabpot/php-cs-fixer": "0.4.0",
+                "phpunit/phpunit": "4.0.*",
+                "satooshi/php-coveralls": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "JShrink": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Robert Hafner",
+                    "email": "tedivm@tedivm.com"
+                }
+            ],
+            "description": "Javascript Minifier built in PHP",
+            "homepage": "http://github.com/tedious/JShrink",
+            "keywords": [
+                "javascript",
+                "minifier"
+            ],
+            "time": "2014-11-11 03:54:14"
+        },
+        {
             "name": "vlucas/phpdotenv",
             "version": "v1.1.0",
             "source": {
@@ -2584,12 +2630,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/vluzrmos/lumen-socketio.git",
-                "reference": "a1d86640792d36dbebb6ba8a8e0db1886303b0b4"
+                "reference": "27745cefcccd25c17ad4f650414d5aae12ae496a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vluzrmos/lumen-socketio/zipball/a1d86640792d36dbebb6ba8a8e0db1886303b0b4",
-                "reference": "a1d86640792d36dbebb6ba8a8e0db1886303b0b4",
+                "url": "https://api.github.com/repos/vluzrmos/lumen-socketio/zipball/27745cefcccd25c17ad4f650414d5aae12ae496a",
+                "reference": "27745cefcccd25c17ad4f650414d5aae12ae496a",
                 "shasum": ""
             },
             "require": {
@@ -2624,7 +2670,7 @@
                 "laravel",
                 "lumen"
             ],
-            "time": "2015-05-09 08:23:19"
+            "time": "2015-05-09 08:46:38"
         },
         {
             "name": "vluzrmos/slack-api",

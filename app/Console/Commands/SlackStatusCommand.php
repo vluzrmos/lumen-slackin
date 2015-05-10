@@ -134,6 +134,6 @@ class SlackStatusCommand extends Command{
      * @return bool
      */
     protected function isRealUser($user){
-        return (isset($user['is_bot']) and !$user['is_bot']) OR $user['id']!='USLACKBOT';
+        return (isset($user['is_bot']) and !$user['is_bot']) and $user['deleted']==false and $user['id']!='USLACKBOT';
     }
 }

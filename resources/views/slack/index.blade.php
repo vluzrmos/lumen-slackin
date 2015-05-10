@@ -29,8 +29,9 @@
                 console.log(data);
             }
 
-            $('.users-online').html(data.active);
-            $('.users-total').html(data.total);
+            $('#status').html(Lang.choice('slackin.users_online', data.active, data));
+//            $('.users-online').html(data.active);
+//            $('.users-total').html(data.total);
         }
     };
 

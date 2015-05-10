@@ -84,6 +84,8 @@ $app->register('Vluzrmos\SlackApi\SlackApiServiceProvider');
 
 $app->register('Vluzrmos\Socketio\SocketioServiceProvider');
 
+$app->register('Mariuzzo\LaravelJsLocalization\LaravelJsLocalizationServiceProvider');
+
 /**
  * Register SlackApi facade
  */
