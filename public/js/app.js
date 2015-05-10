@@ -1,10 +1,8 @@
-var app = {
-    config:{
-        'debug': false
-    },
+var app = app||{};
 
-    Listeners:{}
-};
+app.config = app.config||{debug: false};
+
+app.Listeners = app.Listeners || {};
 
 app.Listeners.UsersActivity = {
     whenActivity: function(data){
@@ -16,7 +14,8 @@ app.Listeners.UsersActivity = {
     }
 };
 
-var socket = io('http://localhost:8080');
+var socket = io(app.config.websocket.host+":"+app.config.websocket.port);
+
 socket.on('local:UsersActivity', app.Listeners.UsersActivity.whenActivity);
 
 

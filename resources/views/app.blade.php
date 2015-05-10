@@ -38,17 +38,25 @@
     <link rel="stylesheet" href="{{url('css/app.css')}}"/>
 
     <script type="text/javascript" src="{{url('js/messages.js')}}"></script>
+    <script type="text/javascript">
+        var app = app||{};
+        app.config = app.config||{};
+
+        app.config.debug = Number.parseInt('{{env('APP_DEBUG')}}');
+        app.config.websocket = {
+            host: '{{env('WS_HOST')}}'||window.location.hostname,
+            port: '{{env('WS_PORT')}}'||'8080'
+        };
+    </script>
     <script type="text/javascript">Lang.setLocale('{{config('app.locale')}}');</script>
     <script type="text/javascript" src="{{url('js/app.js')}}"></script>
-    <script type="text/javascript">
-        app.config.debug = Number.parseInt('{{env('APP_DEBUG')}}');
-    </script>
+
 </head>
 <body>
     @yield('content')
 
     <div id="footer">
-        Made with <i class="glyphicon glyphicon-heart" style="color: red;"></i> by <a href="https://github.com/vluzrmos" target="_blank">Vluzrmos</a> + <a href="http://lumen.laravel.com" target="_blank">Lumen Framework</a>, fork me on <a href="https://github.com/vluzrmos/lumen-slackin" target="_blank">Github</a>.
+        {!!trans('messages.copyright')!!}
     </div>
 </body>
 </html>

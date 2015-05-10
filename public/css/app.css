@@ -3,7 +3,7 @@
 }
 
 .container{
-    margin-top: 125px;
+    margin-top: 10%;
 }
 
 #validation-message{
@@ -11,14 +11,17 @@
 }
 
 #logo{
-    margin:10px
+    margin:10px;
+}
+
+#logo img{
+    width:48px;
+    height: 48px;
 }
 
 #footer{
-    position:absolute;
-    bottom: 0;
     text-align: center;
     width: 100%;
     opacity: 0.65;
-    margin-bottom: 10px
+    margin-top: 15%;
 }
