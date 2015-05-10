@@ -1,7 +1,7 @@
 {
-    "name": "laravel/lumen",
-    "description": "The Laravel Lumen Framework.",
-    "keywords": ["framework", "laravel", "lumen"],
+    "name": "vluzrmos/lumen-slackin",
+    "description": "Lumen Slack Invitator.",
+    "keywords": ["Slack", "lumen", "laravel"],
     "license": "MIT",
     "type": "project",
     "require": {
@@ -35,5 +35,7 @@
     },
     "config": {
         "preferred-install": "dist"
-    }
+    },
+
+    "minimum-stability": "stable"
 }
