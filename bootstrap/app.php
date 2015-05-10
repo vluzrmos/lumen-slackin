@@ -80,6 +80,8 @@ $app->middleware([
 
 $app->register('App\Providers\AppServiceProvider');
 
+$app->register('App\Providers\ValidationServiceProvider');
+
 $app->register('Vluzrmos\SlackApi\SlackApiServiceProvider');
 
 $app->register('Vluzrmos\Socketio\SocketioServiceProvider');

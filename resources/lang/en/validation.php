@@ -73,6 +73,8 @@ return [
     "unique"               => "The :attribute has already been taken.",
     "url"                  => "The :attribute format is invalid.",
     "timezone"             => "The :attribute must be a valid zone.",
+    'wrong' => 'Something went wrong.',
+    'min_words' => 'Type at least :words words.',
 
     /*
     |--------------------------------------------------------------------------
@@ -86,8 +88,8 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'username' => [
+            'min_words' => 'Type your first and last name',
         ],
     ],
 
@@ -102,6 +104,9 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'username' => 'nome',
+        'email' => 'e-mail'
+    ],
 
 ];

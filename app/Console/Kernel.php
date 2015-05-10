@@ -12,7 +12,8 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        'App\Console\Commands\SlackStatusCommand'
+        'App\Console\Commands\SlackStatusCommand',
+        'App\Console\Commands\SlackTeamInfoCommand',
     ];
 
     /**
