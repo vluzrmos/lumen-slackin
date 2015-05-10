@@ -29,6 +29,7 @@ And your have to install [Redis](http://redis.io/), on linux distros: <code lang
 Copy <code>.env.example</code> to <code>.env</code> and:
 
 Change the <code>APP_KEY</code> to something random string with max 32 characters.
+
 Change the <code>SLACK_TOKEN</code> to the token of your user on slack team, with admin privilegies, you can get it on [Slack Web API](https://api.slack.com/web#authentication).
 
 ## Run
