@@ -1,5 +1,7 @@
 ## Lumen - Slackin
 
+[![Latest Stable Version](https://poser.pugx.org/vluzrmos/lumen-slackin/v/stable)](https://packagist.org/packages/vluzrmos/lumen-slackin) [![Total Downloads](https://poser.pugx.org/vluzrmos/lumen-slackin/downloads)](https://packagist.org/packages/vluzrmos/lumen-slackin) [![License](https://poser.pugx.org/vluzrmos/lumen-slackin/license)](https://packagist.org/packages/vluzrmos/lumen-slackin)
+
 A Slack Invitator made with Lumen Framework and inspired by [rauchg/slackin](https://github.com/rauchg/slackin).
 
 ## Download the source
