@@ -14,15 +14,19 @@ class DetectLocaleMiddleware {
      */
     public function handle($request, Closure $next)
     {
-        $langs = preg_split('/,/',$request->header('Accept-Language'));
+        $pairs = preg_split('/; ?/',$request->header('Accept-Language'));
 
-        foreach($langs as $lang){
-            $lang = trim($lang);
+        foreach($pairs as $pair){
+            $langs = preg_split('/, ?/', $pair);
 
-            if(is_dir(base_path('resources/lang/'.$lang))){
-                Lang::setLocale($lang);
+            foreach($langs as $lang){
+                $lang = strtolower(trim($lang));
 
-                break;
+                if(is_dir(base_path('resources/lang/'.$lang))){
+                    Lang::setLocale($lang);
+
+                    return $next($request);
+                }
             }
         }
 
