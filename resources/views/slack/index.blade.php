@@ -4,7 +4,7 @@
 <div class="row">
     <div class="col-sm-8 col-sm-offset-2" >
         <div id="logo">
-            <img src="{{$team['icon']['image_132']}}" width="48"/>
+            <img src="{{$team['icon']['image_132']}}" />
         </div>
 
         <div id="message">
