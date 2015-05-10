@@ -6,16 +6,12 @@
         text-align:center
     }
 
-    #form-invite{
-        margin-top: 20px;;
-    }
-
     .container{
         margin-top: 50px;
     }
 
     #validation-message{
-        margin-bottom: 20px;
+        margin: 20px;
     }
 
     #logo{
