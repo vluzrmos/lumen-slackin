@@ -1,0 +1,4 @@
+[submodule "vluzrmos/Laravel-JS-Localization"]
+    path=workbench/vluzrmos/Laravel-JS-Localization
+    url=git@github.com:vluzrmos/Laravel-JS-Localization.git
+
