@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "189e35c89c915abe47a6c25bc720d0a6",
+    "hash": "4b19a20ead5ee643d2145f557d12ac42",
     "packages": [
         {
             "name": "danielstjules/stringy",
@@ -1594,6 +1594,81 @@
                 "storage"
             ],
             "time": "2015-03-29 14:01:43"
+        },
+        {
+            "name": "mariuzzo/laravel-js-localization",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/vluzrmos/Laravel-JS-Localization.git",
+                "reference": "786a3eb83bb0e136ecaddf302eee6d50daf0c96e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/vluzrmos/Laravel-JS-Localization/zipball/786a3eb83bb0e136ecaddf302eee6d50daf0c96e",
+                "reference": "786a3eb83bb0e136ecaddf302eee6d50daf0c96e",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/console": "5.0.*",
+                "illuminate/filesystem": "5.0.*",
+                "illuminate/support": "5.0.*",
+                "php": ">=5.4.0",
+                "tedivm/jshrink": "1.0.*"
+            },
+            "require-dev": {
+                "mockery/mockery": "0.9.*",
+                "phpunit/phpunit": "4.0.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Mariuzzo\\LaravelJsLocalization\\": "src/Mariuzzo/LaravelJsLocalization/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Rubens Mariuzzo",
+                    "email": "rubens@mariuzzo.com",
+                    "homepage": "https://github.com/rmariuzzo",
+                    "role": "Developer"
+                },
+                {
+                    "name": "German Popoter",
+                    "email": "me@gpopoteur.com",
+                    "homepage": "https://github.com/gpopoteur",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Galievskiy Dmitriy",
+                    "homepage": "https://github.com/xAockd",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Ramon Ackermann",
+                    "homepage": "https://github.com/sboo",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Laravel Localization in JavaScript",
+            "homepage": "https://github.com/rmariuzzo/laravel-js-localization",
+            "keywords": [
+                "i18n",
+                "javascript",
+                "js",
+                "lang",
+                "laravel",
+                "laravel 5",
+                "localization"
+            ],
+            "support": {
+                "issues": "https://github.com/rmariuzzo/laravel-js-localization/issues",
+                "source": "https://github.com/rmariuzzo/laravel-js-localization"
+            },
+            "time": "2015-05-10 00:05:54"
         },
         {
             "name": "monolog/monolog",
@@ -3678,7 +3753,8 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "vluzrmos/lumen-socketio": 20
+        "vluzrmos/lumen-socketio": 20,
+        "mariuzzo/laravel-js-localization": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
