@@ -56,6 +56,7 @@ $app->singleton(
 */
 
 $app->middleware([
+  'App\Http\Middleware\DetectLocaleMiddleware',
   'Illuminate\Cookie\Middleware\EncryptCookies',
   'Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse',
   'Illuminate\Session\Middleware\StartSession',
