@@ -16,13 +16,17 @@ That package uses [Lumen Socketio](https://github.com/vluzrmos/lumen-socketio), 
 npm install --save express http-server redis ioredis socket.io
 ```
 
-To run the websocket server in background, I recommend you the package [Forever](https://www.npmjs.com/package/forever):
+To run the socket.io server in background, I recommend you the package [Forever](https://www.npmjs.com/package/forever):
 
 ```bash
 npm install -g forever
 ```
 
-And your have to install [Redis](http://redis.io/), on linux distros: <code lang="bash">sudo apt-get install redis-server</code>.
+And your have to install [Redis](http://redis.io/), on linux distros: 
+
+```bash
+sudo apt-get install redis-server
+```
 
 ## Instalation
 
@@ -34,12 +38,16 @@ Change the <code>SLACK_TOKEN</code> to the token of your user on slack team, wit
 
 ## Run
 
-```bash
-    forever start socket.js
-```
+Start the socket.io server:
 
 ```bash
-    php artisan serve
+forever start socket.js
+```
+
+Start the http server:
+
+```bash
+php artisan serve
 ```
 
 ## License
