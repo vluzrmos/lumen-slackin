@@ -26,7 +26,7 @@ npm install -g gulp forever
 npm install
 ```
 
-And your have to install [Redis](http://redis.io/), for Real Time count users, on linux distros: 
+And you have to install [Redis](http://redis.io/), for Real Time count users. On linux distros: 
 
 ```bash
 sudo apt-get install redis-server
