@@ -47,7 +47,7 @@ Start the socket.io server:
 forever start socket.js
 ```
 
-The socket.io server will run at localhost:8080, if you need to modify it, just change it on <code>socket.js</code> and <code>public/js/app.js</code> files.
+The socket.io server will run at localhost:8080, if you need to modify it, just change it on <code>socket.js</code> and on your <code>.env</code> files.
 
 Compile the assets:
 
