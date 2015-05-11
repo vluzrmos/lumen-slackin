@@ -3,6 +3,8 @@ var http  = require('http').Server(app);
 var io    = require('socket.io')(http);
 var exec  = require('exec');
 
+require('dotenv').load();
+
 var Redis = require('ioredis');
 
 var redis = new Redis('redis://127.0.0.1:6379/0');
@@ -18,7 +20,7 @@ redis.on('message', function(channel, message){
 });
 
 
-http.listen(8080, function(){
+http.listen(process.env.WS_PORT, function(){
 	// console.log('Listen on 0.0.0.0:8080');
 });
 
@@ -29,5 +31,11 @@ setInterval(function(){
             process.stderr.write(err);
         }
     });
-}, 3000);
+}, process.env.SLACK_STATUS_INTERVAL || 3000);
 
+// Exec queue work
+exec('php artisan queue:work --daemon', function(err, out, code) {
+    if (err instanceof Error){
+        process.stderr.write(err);
+    }
+});

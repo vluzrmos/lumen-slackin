@@ -6,6 +6,7 @@
     "test": "tests"
   },
   "dependencies": {
+    "dotenv": "^1.1.0",
     "exec": "^0.2.0",
     "express": "^4.12.3",
     "gulp": "^3.8.8",
