@@ -50,6 +50,8 @@ forever start socket.js
 
 The socket.io server will run at localhost:8080, if you need to modify it, just change it on <code>socket.js</code> and on your <code>.env</code> file <code>WS_PORT</code> and <code>WS_HOST</code>.
 
+> That will also check  updates of your team status every 3000 ms (3 seconds), modify it on socket.js if you want. 
+
 Compile the assets (css and javascript files):
 
 ```bash

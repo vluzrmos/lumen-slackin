@@ -1,6 +1,7 @@
 var app   = require('express');
 var http  = require('http').Server(app);
 var io    = require('socket.io')(http);
+var exec  = require('exec');
 
 var Redis = require('ioredis');
 
@@ -20,4 +21,13 @@ redis.on('message', function(channel, message){
 http.listen(8080, function(){
 	// console.log('Listen on 0.0.0.0:8080');
 });
+
+// Exec as cronjob every (x) seconds
+setInterval(function(){
+    exec('php artisan slack:status', function(err, out, code) {
+        if (err instanceof Error){
+            process.stderr.write(err);
+        }
+    });
+}, 3000);
 
