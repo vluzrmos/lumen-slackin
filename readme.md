@@ -12,20 +12,21 @@ composer create-project vluzrmos/lumen-slackin
 
 ## Dependencies
 
-That package uses [Lumen Socketio](https://github.com/vluzrmos/lumen-socketio), then you have to install nodejs and that dependencies:
+That package uses [NodeJS](https://nodejs.org/) modules, 
+download it on [https://nodejs.org/](https://nodejs.org/) and install, 
+then you have to install nodejs dependencies:
 
 ```bash
-npm install -g gulp
+# Installing global dependencies (with super-user, root, or administrator priviligies)
+npm install -g gulp forever
+```
+
+```bash
+# Installing local dependencies described on packages.json file
 npm install
 ```
 
-To run the socket.io server in background, I recommend you the package [Forever](https://www.npmjs.com/package/forever):
-
-```bash
-npm install -g forever
-```
-
-And your have to install [Redis](http://redis.io/), on linux distros: 
+And your have to install [Redis](http://redis.io/), for Real Time count users, on linux distros: 
 
 ```bash
 sudo apt-get install redis-server
@@ -47,13 +48,14 @@ Start the socket.io server:
 forever start socket.js
 ```
 
-The socket.io server will run at localhost:8080, if you need to modify it, just change it on <code>socket.js</code> and on your <code>.env</code> files.
+The socket.io server will run at localhost:8080, if you need to modify it, just change it on <code>socket.js</code> and on your <code>.env</code> file <code>WS_PORT</code> and <code>WS_HOST</code>.
 
-Compile the assets:
+Compile the assets (css and javascript files):
 
 ```bash
 gulp --production
 ```
+> Without that, if your application is in production mode (APP_ENV=production on .env file), some errors will occurs. 
 
 Start the http server:
 
@@ -65,6 +67,18 @@ By default, artisan serve starts on port 8000,
 if you want to modify it, just starts it by passing <code>--port=NUMBER</code> or 
 just make a VirtualHost on your server (Apache or Nginx) with DocumentRoot on 
 <code>/path/to/that/project/public/</code> path.
+
+## Multi-Language Support
+
+By default the system will try to detect if the browser language is available on <code>resources/lang</code>, 
+if available will setup. Available languages:
+
+* en
+* pt-br
+
+## Mobile Devices
+
+That project uses [Twitter Bootstrap 3](http://getbootstrap.com), and it is compatible on small devices.
 
 ## License
 
