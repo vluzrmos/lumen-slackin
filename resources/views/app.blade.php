@@ -12,17 +12,17 @@
     @endif
 
     @if(app()->environment()=='local')
-        <script type="text/javascript" src="{{url('js/jquery-2.1.4.min.js')}}"></script>
-        <script type="text/javascript" src="{{url('js/socket.io-1.3.5.js')}}"></script>
+        <script type="text/javascript" src="{{url('js/jquery.js')}}"></script>
+        <script type="text/javascript" src="{{url('js/socket.io.js')}}"></script>
 
         <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="{{url('css/bootstrap.min.css')}}">
+        <link rel="stylesheet" href="{{url('css/bootstrap.css')}}">
 
         <!-- Optional theme -->
-        <link rel="stylesheet" href="{{url('css/bootstrap-theme.min.css')}}">
+        <link rel="stylesheet" href="{{url('css/bootstrap-theme.css')}}">
 
         <!-- Latest compiled and minified JavaScript -->
-        <script src="{{url('js/bootstrap.min.js')}}"></script>
+        <script src="{{url('js/bootstrap.js')}}"></script>
         <link rel="stylesheet" href="{{url('css/app.css')}}"/>
 
         <script type="text/javascript" src="{{url('js/messages.js')}}"></script>
@@ -39,9 +39,9 @@
         <script type="text/javascript">Lang.setLocale("{{app('translator')->locale()}}");</script>
         <script type="text/javascript" src="{{url('js/app.js')}}"></script>
     @else
-        <link rel="stylesheet" href="{{url('css/all.css')}}"/>
+        <link rel="stylesheet" href="{{url(elixir('css/all.css'))}}"/>
 
-        <script type="text/javascript" src="{{url('js/vendor.js')}}"></script>
+        <script type="text/javascript" src="{{url(elixir('js/all.js'))}}"></script>
 
         <script type="text/javascript">
             var app = app||{};
@@ -54,7 +54,7 @@
             };
         </script>
         <script type="text/javascript">Lang.setLocale("{{app('translator')->locale()}}");</script>
-        <script type="text/javascript" src="{{url('js/app.min.js')}}"></script>
+        <script type="text/javascript" src="{{url(elixir('js/app.min.js'))}}"></script>
     @endif
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->

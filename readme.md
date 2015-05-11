@@ -15,7 +15,8 @@ composer create-project vluzrmos/lumen-slackin
 That package uses [Lumen Socketio](https://github.com/vluzrmos/lumen-socketio), then you have to install nodejs and that dependencies:
 
 ```bash
-npm install --save express http-server redis ioredis socket.io
+npm install -g gulp
+npm install
 ```
 
 To run the socket.io server in background, I recommend you the package [Forever](https://www.npmjs.com/package/forever):
@@ -47,6 +48,12 @@ forever start socket.js
 ```
 
 The socket.io server will run at localhost:8080, if you need to modify it, just change it on <code>socket.js</code> and <code>public/js/app.js</code> files.
+
+Compile the assets:
+
+```bash
+gulp --production
+```
 
 Start the http server:
 
