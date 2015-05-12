@@ -20,7 +20,7 @@ redis.on('message', function(channel, message){
 });
 
 
-http.listen(process.env.WS_PORT, function(){
+http.listen(process.env.WS_PORT || 8080, function(){
 	// console.log('Listen on 0.0.0.0:8080');
 });
 
@@ -34,8 +34,11 @@ setInterval(function(){
 }, process.env.SLACK_STATUS_INTERVAL || 3000);
 
 // Exec queue work
-exec('php artisan queue:work --daemon', function(err, out, code) {
-    if (err instanceof Error){
-        process.stderr.write(err);
-    }
-});
+setInterval(function(){
+    exec('php artisan queue:work', function(err, out, code) {
+        if (err instanceof Error){
+            process.stderr.write(err);
+        }
+    });
+}, 3000);
+
