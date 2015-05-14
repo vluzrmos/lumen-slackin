@@ -92,7 +92,9 @@ $app->register('Mariuzzo\LaravelJsLocalization\LaravelJsLocalizationServiceProvi
 /**
  * Register SlackApi facade
  */
-class_alias('Vluzrmos\SlackApi\SlackApiFacade', 'SlackApi');
+if(!class_exists('SlackApi')){
+	class_alias('Vluzrmos\SlackApi\SlackApiFacade', 'SlackApi');
+}
 
 /*
 |--------------------------------------------------------------------------
