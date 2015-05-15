@@ -34,11 +34,10 @@ setInterval(function(){
 }, process.env.SLACK_STATUS_INTERVAL || 3000);
 
 // Exec queue work
-setInterval(function(){
-    exec('php artisan queue:work', function(err, out, code) {
-        if (err instanceof Error){
-            process.stderr.write(err);
-        }
-    });
-}, 3000);
+
+exec('php artisan queue:listen --timeout=240', function(err, out, code) {
+    if (err instanceof Error){
+        process.stderr.write(err);
+    }
+});
 
