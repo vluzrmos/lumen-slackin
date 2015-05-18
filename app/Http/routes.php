@@ -16,14 +16,22 @@ $app->group(['namespace' => 'App\Http\Controllers'], function() use($app){
     $app->post('/invite', 'IndexController@postInvite');
 });
 
-$app->get('/random', function() use ($app){
-    $totals = ['total' => $app->request->input('total', 1), 'active' => $app->request->input('active', 1)];
+$app->get('/badge.svg', function(){
+	/** @var \Illuminate\Cache\Repository $cache */
+	$cache = app('cache');
 
-    Cache::forever(\App\Console\Commands\SlackStatusCommand::SLACK_TOTALS_KEY, $totals);
+	/** @var \Illuminate\Http\Request $request */
+	$request = app('request');
 
-    publish('local', 'UsersActivity', $totals);
+ 	$totals = $cache->get(\App\Console\Commands\SlackStatusCommand::SLACK_TOTALS_KEY);
 
-    return 'OK';
+	$renders = [new \PUGX\Poser\Render\SvgRender(), new \PUGX\Poser\Render\SvgFlatRender()];
+
+	$poser = new \PUGX\Poser\Poser($renders);
+
+	$image =  $poser->generate('slack', $totals['active']."/".$totals['total'], 'F1504F', $request->get('format', 'flat'));
+
+	return $image;
 });
 
 

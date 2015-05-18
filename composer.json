@@ -11,7 +11,8 @@
         "predis/predis": "~1.0",
         "illuminate/redis": "~5.0",
         "vluzrmos/lumen-socketio":"~0.1",
-        "mariuzzo/laravel-js-localization":"dev-master"
+        "mariuzzo/laravel-js-localization":"dev-master",
+        "badges/poser": "^1.1"
     },
     "require-dev": {
         "phpunit/phpunit": "~4.0"
@@ -35,7 +36,11 @@
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/vluzrmos/Laravel-JS-Localization.git"
+            "url": "git@github.com:vluzrmos/Laravel-JS-Localization.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:vluzrmos/image.git"
         }
     ],
 
