@@ -85,17 +85,6 @@ $app->register('App\Providers\ValidationServiceProvider');
 
 $app->register('Vluzrmos\SlackApi\SlackApiServiceProvider');
 
-$app->register('Vluzrmos\Socketio\SocketioServiceProvider');
-
-$app->register('Mariuzzo\LaravelJsLocalization\LaravelJsLocalizationServiceProvider');
-
-/**
- * Register SlackApi facade
- */
-if(!class_exists('SlackApi')){
-	class_alias('Vluzrmos\SlackApi\SlackApiFacade', 'SlackApi');
-}
-
 /*
 |--------------------------------------------------------------------------
 | Load The Application Routes

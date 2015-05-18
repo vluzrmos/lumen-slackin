@@ -13,7 +13,6 @@
 
     @if(app()->environment()=='local')
         <script type="text/javascript" src="{{url('js/jquery.js')}}"></script>
-        <script type="text/javascript" src="{{url('js/socket.io.js')}}"></script>
 
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="{{url('css/bootstrap.css')}}">
@@ -21,22 +20,19 @@
         <!-- Optional theme -->
         <link rel="stylesheet" href="{{url('css/bootstrap-theme.css')}}">
 
-        <!-- Latest compiled and minified JavaScript -->
-        <script src="{{url('js/bootstrap.js')}}"></script>
         <link rel="stylesheet" href="{{url('css/app.css')}}"/>
 
-        <script type="text/javascript" src="{{url('js/messages.js')}}"></script>
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="{{url('js/bootstrap.js')}}"></script>
+
+
         <script type="text/javascript">
             var app = app||{};
             app.config = app.config||{};
 
             app.config.debug = Number.parseInt('{{env('APP_DEBUG')}}');
-            app.config.websocket = {
-                host: '{{env('WS_HOST')}}'||window.location.hostname,
-                port: '{{env('WS_PORT')}}'||'8080'
-            };
         </script>
-        <script type="text/javascript">Lang.setLocale("{{app('translator')->locale()}}");</script>
+
         <script type="text/javascript" src="{{url('js/app.js')}}"></script>
     @else
         <link rel="stylesheet" href="{{url(elixir('css/all.css'))}}"/>
@@ -48,12 +44,8 @@
             app.config = app.config||{};
 
             app.config.debug = Number.parseInt("{{env('APP_DEBUG')}}");
-            app.config.websocket = {
-                host: "{{env('WS_HOST')}}"||window.location.hostname,
-                port: "{{env('WS_PORT')}}"||'8080'
-            };
         </script>
-        <script type="text/javascript">Lang.setLocale("{{app('translator')->locale()}}");</script>
+
         <script type="text/javascript" src="{{url(elixir('js/app.min.js'))}}"></script>
     @endif
 

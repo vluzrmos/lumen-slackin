@@ -2,17 +2,6 @@ var gulp = require("gulp");
 var shell = require("gulp-shell");
 var elixir = require('laravel-elixir');
 
-/**
- * Task to compile resource/lang into public/js/messages.js
- */
-elixir.extend("langjs", function(path) {
-    gulp.task("langjs", function() {
-        gulp.src("").pipe(shell("php artisan lang:js " + (path || "public/js/messages.js")));
-    });
-
-    return this.queueTask("langjs");
-});
-
 /*
  |--------------------------------------------------------------------------
  | Elixir Asset Management
@@ -25,13 +14,9 @@ elixir.extend("langjs", function(path) {
  */
 
 elixir(function(mix) {
-
-    mix.langjs();
-
     mix.scripts([
         'jquery.js',
         'bootstrap.js',
-        'messages.js',
         'socket.io.js'
     ], 'public/js/all.js', 'public/js');
 

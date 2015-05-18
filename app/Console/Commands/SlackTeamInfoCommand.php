@@ -2,23 +2,11 @@
 
 namespace App\Console\Commands;
 
-use Illuminate\Cache\CacheManager;
+use App\Services\SlackService;
 use Illuminate\Console\Command;
-use Illuminate\Contracts\Cache\Factory as Cache;
-use Vluzrmos\SlackApi\SlackApiFacade as SlackApi;
-use Vluzrmos\Socketio\Contracts\Broadcast;
 
-class SlackTeamInfoCommand extends Command{
-
-    /**
-     * Key of totals cache
-     */
-    const SLACK_TEAM_INFO_KEY = 'slack.info';
-
-    /**
-     * @var CacheManager
-     */
-    protected $cache;
+class SlackTeamInfoCommand extends Command
+{
 
     /**
      * Command Name
@@ -27,26 +15,25 @@ class SlackTeamInfoCommand extends Command{
     protected $name = "slack:team";
 
     /**
-     * @var Broadcast
+     * @var SlackService
      */
-    protected $broadcast;
+    private $slack;
 
     /**
-     * @param Cache $cache Default cache provider
+     * @param SlackService $slack
      */
-    public function __construct(Cache $cache){
+    public function __construct(SlackService $slack)
+    {
         parent::__construct();
 
-        $this->cache = $cache;
+        $this->slack = $slack;
     }
 
     /**
      *  Performs the event
      */
-    public function fire(){
-        $info = SlackApi::get('team.info');
-
-        $this->cache->forever(self::SLACK_TEAM_INFO_KEY, $info['team']);
+    public function fire()
+    {
+        $this->slack->refreshTeamInfo();
     }
-
 }

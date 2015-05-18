@@ -11,28 +11,25 @@
 |
 */
 
-$app->group(['namespace' => 'App\Http\Controllers'], function() use($app){
+$app->group(['namespace' => 'App\Http\Controllers'], function () use ($app) {
     $app->get('/', 'IndexController@getIndex');
     $app->post('/invite', 'IndexController@postInvite');
 });
 
-$app->get('/badge.svg', function(){
-	/** @var \Illuminate\Cache\Repository $cache */
-	$cache = app('cache');
+$app->get('/badge.svg', function () {
+    /** @var \Illuminate\Cache\Repository $cache */
+    $cache = app('cache');
 
-	/** @var \Illuminate\Http\Request $request */
-	$request = app('request');
+    /** @var \Illuminate\Http\Request $request */
+    $request = app('request');
 
- 	$totals = $cache->get(\App\Console\Commands\SlackStatusCommand::SLACK_TOTALS_KEY);
+    $totals = $cache->get(\App\Console\Commands\SlackStatusCommand::SLACK_TOTALS_KEY);
 
-	$renders = [new \PUGX\Poser\Render\SvgRender(), new \PUGX\Poser\Render\SvgFlatRender()];
+    $renders = [new \PUGX\Poser\Render\SvgRender(), new \PUGX\Poser\Render\SvgFlatRender()];
 
-	$poser = new \PUGX\Poser\Poser($renders);
+    $poser = new \PUGX\Poser\Poser($renders);
 
-	$image =  $poser->generate('slack', $totals['active']."/".$totals['total'], 'F1504F', $request->get('format', 'flat'));
+    $image =  $poser->generate('slack', $totals['active']."/".$totals['total'], 'F1504F', $request->get('format', 'flat'));
 
-	return $image;
+    return $image;
 });
-
-
-

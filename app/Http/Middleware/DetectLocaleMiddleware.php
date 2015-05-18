@@ -3,7 +3,8 @@
 use Closure;
 use Illuminate\Support\Facades\Lang;
 
-class DetectLocaleMiddleware {
+class DetectLocaleMiddleware
+{
 
     /**
      * Handle an incoming request.
@@ -14,15 +15,15 @@ class DetectLocaleMiddleware {
      */
     public function handle($request, Closure $next)
     {
-        $pairs = preg_split('/; ?/',$request->header('Accept-Language'));
+        $pairs = preg_split('/; ?/', $request->header('Accept-Language'));
 
-        foreach($pairs as $pair){
+        foreach ($pairs as $pair) {
             $langs = preg_split('/, ?/', $pair);
 
-            foreach($langs as $lang){
+            foreach ($langs as $lang) {
                 $lang = strtolower(trim($lang));
 
-                if(is_dir(base_path('resources/lang/'.$lang))){
+                if (is_dir(base_path('resources/lang/'.$lang))) {
                     Lang::setLocale($lang);
 
                     return $next($request);
@@ -32,5 +33,4 @@ class DetectLocaleMiddleware {
 
         return $next($request);
     }
-
 }

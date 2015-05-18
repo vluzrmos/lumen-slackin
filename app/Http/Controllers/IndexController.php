@@ -8,40 +8,51 @@
 
 namespace App\Http\Controllers;
 
-
-use App\Console\Commands\SlackStatusCommand;
-use App\Console\Commands\SlackTeamInfoCommand;
 use App\Jobs\SlackInvitationJob;
+use App\Services\SlackService;
 use Illuminate\Contracts\Cache\Factory as Cache;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Artisan;
 
-class IndexController extends Controller{
+class IndexController extends Controller
+{
 
     /**
      * @var \Illuminate\Cache\Repository
      */
     protected $cache;
 
+    /** @var SlackService */
+    protected $slack;
+
     /**
-     * @param Cache $cache
+     * @param Cache        $cache
+     * @param SlackService $slack
      */
-    public function __construct(Cache $cache){
+    public function __construct(Cache $cache, SlackService $slack)
+    {
         $this->cache = $cache;
+        $this->slack = $slack;
     }
 
     /**
      * @return \Illuminate\View\View
      */
-    public function getIndex(){
-        return view('slack.index', ['totals' => $this->getCachedUsersStatus(), 'team'=> $this->getCachedTeamInfo()]);
+    public function getIndex()
+    {
+        $data = [
+            'totals' => $this->slack->getCachedUsersStatus(),
+            'team'   => $this->slack->getCachedTeamInfo()
+        ];
+
+        return view('slack.index', $data);
     }
 
     /**
      * @param Request $request
      * @return array
      */
-    public function postInvite(Request $request){
+    public function postInvite(Request $request)
+    {
         $this->validate($request, [
             'username' => 'required|min_words:2',
             'email'    => 'required|email'
@@ -55,31 +66,5 @@ class IndexController extends Controller{
         return [
             'message' => trans('slackin.invited')
         ];
-    }
-
-    /**
-     *
-     * @return array
-     */
-    protected function getCachedUsersStatus(){
-        $cached = $this->cache->get(SlackStatusCommand::SLACK_TOTALS_KEY);
-
-        if(!$cached){
-            Artisan::call('slack:status');
-            $cached = $this->cache->get(SlackStatusCommand::SLACK_TOTALS_KEY);
-        }
-
-        return $cached;
-    }
-
-    protected function getCachedTeamInfo(){
-        $cached = $this->cache->get(SlackTeamInfoCommand::SLACK_TEAM_INFO_KEY);
-
-        if(!$cached){
-            Artisan::call('slack:team');
-            $cached = $this->cache->get(SlackTeamInfoCommand::SLACK_TEAM_INFO_KEY);
-        }
-
-        return $cached;
     }
 }

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "046b6d0ac2085eb598687df68705954f",
+    "hash": "e50be47be616e4669d5f06a37cab7d19",
     "packages": [
         {
             "name": "badges/poser",
@@ -1659,81 +1659,6 @@
             "time": "2015-03-29 14:01:43"
         },
         {
-            "name": "mariuzzo/laravel-js-localization",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/vluzrmos/Laravel-JS-Localization.git",
-                "reference": "786a3eb83bb0e136ecaddf302eee6d50daf0c96e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/vluzrmos/Laravel-JS-Localization/zipball/786a3eb83bb0e136ecaddf302eee6d50daf0c96e",
-                "reference": "786a3eb83bb0e136ecaddf302eee6d50daf0c96e",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/console": "5.0.*",
-                "illuminate/filesystem": "5.0.*",
-                "illuminate/support": "5.0.*",
-                "php": ">=5.4.0",
-                "tedivm/jshrink": "1.0.*"
-            },
-            "require-dev": {
-                "mockery/mockery": "0.9.*",
-                "phpunit/phpunit": "4.0.*"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Mariuzzo\\LaravelJsLocalization\\": "src/Mariuzzo/LaravelJsLocalization/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Rubens Mariuzzo",
-                    "email": "rubens@mariuzzo.com",
-                    "homepage": "https://github.com/rmariuzzo",
-                    "role": "Developer"
-                },
-                {
-                    "name": "German Popoter",
-                    "email": "me@gpopoteur.com",
-                    "homepage": "https://github.com/gpopoteur",
-                    "role": "Developer"
-                },
-                {
-                    "name": "Galievskiy Dmitriy",
-                    "homepage": "https://github.com/xAockd",
-                    "role": "Developer"
-                },
-                {
-                    "name": "Ramon Ackermann",
-                    "homepage": "https://github.com/sboo",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Laravel Localization in JavaScript",
-            "homepage": "https://github.com/rmariuzzo/laravel-js-localization",
-            "keywords": [
-                "i18n",
-                "javascript",
-                "js",
-                "lang",
-                "laravel",
-                "laravel 5",
-                "localization"
-            ],
-            "support": {
-                "issues": "https://github.com/rmariuzzo/laravel-js-localization/issues",
-                "source": "https://github.com/rmariuzzo/laravel-js-localization"
-            },
-            "time": "2015-05-10 00:05:54"
-        },
-        {
             "name": "monolog/monolog",
             "version": "1.13.1",
             "source": {
@@ -2666,52 +2591,6 @@
             "time": "2015-05-01 14:14:24"
         },
         {
-            "name": "tedivm/jshrink",
-            "version": "v1.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/tedious/JShrink.git",
-                "reference": "7575d9d96f113bc7c1c28ec8231ee086751a9078"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/tedious/JShrink/zipball/7575d9d96f113bc7c1c28ec8231ee086751a9078",
-                "reference": "7575d9d96f113bc7c1c28ec8231ee086751a9078",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0"
-            },
-            "require-dev": {
-                "fabpot/php-cs-fixer": "0.4.0",
-                "phpunit/phpunit": "4.0.*",
-                "satooshi/php-coveralls": "dev-master"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "JShrink": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Robert Hafner",
-                    "email": "tedivm@tedivm.com"
-                }
-            ],
-            "description": "Javascript Minifier built in PHP",
-            "homepage": "http://github.com/tedious/JShrink",
-            "keywords": [
-                "javascript",
-                "minifier"
-            ],
-            "time": "2014-11-11 03:54:14"
-        },
-        {
             "name": "vlucas/phpdotenv",
             "version": "v1.1.0",
             "source": {
@@ -2761,54 +2640,6 @@
                 "environment"
             ],
             "time": "2014-12-05 15:19:21"
-        },
-        {
-            "name": "vluzrmos/lumen-socketio",
-            "version": "v0.1.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/vluzrmos/lumen-socketio.git",
-                "reference": "27745cefcccd25c17ad4f650414d5aae12ae496a"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/vluzrmos/lumen-socketio/zipball/27745cefcccd25c17ad4f650414d5aae12ae496a",
-                "reference": "27745cefcccd25c17ad4f650414d5aae12ae496a",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/redis": "~5.0",
-                "illuminate/support": "5.0.*",
-                "predis/predis": "~1.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Vluzrmos\\": "src/Vluzrmos/"
-                },
-                "files": [
-                    "src/Vluzrmos/Socketio/helpers.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "DBAD"
-            ],
-            "authors": [
-                {
-                    "name": "Vagner do Carmo",
-                    "email": "vluzrmos@gmail.com"
-                }
-            ],
-            "description": "The Laravel Lumen Socketio Broadcasting.",
-            "keywords": [
-                "Broadcasting",
-                "Socket.io",
-                "WebSockets",
-                "laravel",
-                "lumen"
-            ],
-            "time": "2015-05-09 08:46:38"
         },
         {
             "name": "vluzrmos/slack-api",
@@ -2908,220 +2739,6 @@
                 "instantiate"
             ],
             "time": "2014-10-13 12:58:55"
-        },
-        {
-            "name": "intervention/image",
-            "version": "2.2.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/vluzrmos/image.git",
-                "reference": "79f0a35da7d4f75bb85d9c04513dd5929e21f75e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/vluzrmos/image/zipball/79f0a35da7d4f75bb85d9c04513dd5929e21f75e",
-                "reference": "79f0a35da7d4f75bb85d9c04513dd5929e21f75e",
-                "shasum": ""
-            },
-            "require": {
-                "ext-fileinfo": "*",
-                "php": ">=5.3.0"
-            },
-            "require-dev": {
-                "mockery/mockery": "~0.9.2",
-                "phpunit/phpunit": "3.*"
-            },
-            "suggest": {
-                "ext-gd": "to use GD library based image processing.",
-                "ext-imagick": "to use Imagick based image processing.",
-                "intervention/imagecache": "Caching extension for the Intervention Image library"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Intervention\\Image\\": "src/Intervention/Image"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Oliver Vogel",
-                    "email": "oliver@olivervogel.net",
-                    "homepage": "http://olivervogel.net/"
-                }
-            ],
-            "description": "Image handling and manipulation library with support for Laravel integration",
-            "homepage": "http://image.intervention.io/",
-            "keywords": [
-                "gd",
-                "image",
-                "imagick",
-                "laravel",
-                "thumbnail",
-                "watermark"
-            ],
-            "support": {
-                "source": "https://github.com/vluzrmos/image/tree/2.2.1"
-            },
-            "time": "2015-05-09 16:06:30"
-        },
-        {
-            "name": "intervention/imagecache",
-            "version": "2.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Intervention/imagecache.git",
-                "reference": "20524340a886deb7ee6a917e419305c0f68e2649"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Intervention/imagecache/zipball/20524340a886deb7ee6a917e419305c0f68e2649",
-                "reference": "20524340a886deb7ee6a917e419305c0f68e2649",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/cache": "~4|~5",
-                "illuminate/filesystem": "~4|~5",
-                "intervention/image": "dev-master|~2,>=2.2.0",
-                "jeremeamia/superclosure": "~1|~2",
-                "php": ">=5.3.0"
-            },
-            "require-dev": {
-                "mockery/mockery": "0.9.*",
-                "phpunit/phpunit": "3.*"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Intervention\\Image\\": "src/Intervention/Image"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Oliver Vogel",
-                    "email": "oliver@olivervogel.net",
-                    "homepage": "http://olivervogel.net/"
-                }
-            ],
-            "description": "Caching extension for the Intervention Image Class",
-            "homepage": "http://image.intervention.io",
-            "keywords": [
-                "cache",
-                "gd",
-                "image",
-                "imagick",
-                "laravel"
-            ],
-            "time": "2015-04-24 14:52:35"
-        },
-        {
-            "name": "jeremeamia/SuperClosure",
-            "version": "2.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/jeremeamia/super_closure.git",
-                "reference": "b712f39c671e5ead60c7ebfe662545456aade833"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/jeremeamia/super_closure/zipball/b712f39c671e5ead60c7ebfe662545456aade833",
-                "reference": "b712f39c671e5ead60c7ebfe662545456aade833",
-                "shasum": ""
-            },
-            "require": {
-                "nikic/php-parser": "~1.0",
-                "php": ">=5.4"
-            },
-            "require-dev": {
-                "codeclimate/php-test-reporter": "~0.1.2",
-                "phpunit/phpunit": "~4.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.1-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "SuperClosure\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Jeremy Lindblom",
-                    "email": "jeremeamia@gmail.com",
-                    "homepage": "https://github.com/jeremeamia",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Serialize Closure objects, including their context and binding",
-            "homepage": "https://github.com/jeremeamia/super_closure",
-            "keywords": [
-                "closure",
-                "function",
-                "lambda",
-                "parser",
-                "serializable",
-                "serialize",
-                "tokenizer"
-            ],
-            "time": "2015-03-11 20:06:43"
-        },
-        {
-            "name": "nikic/php-parser",
-            "version": "v1.3.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "dff239267fd1befa1cd40430c9ed12591aa720ca"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/dff239267fd1befa1cd40430c9ed12591aa720ca",
-                "reference": "dff239267fd1befa1cd40430c9ed12591aa720ca",
-                "shasum": ""
-            },
-            "require": {
-                "ext-tokenizer": "*",
-                "php": ">=5.3"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.3-dev"
-                }
-            },
-            "autoload": {
-                "files": [
-                    "lib/bootstrap.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Nikita Popov"
-                }
-            ],
-            "description": "A PHP parser written in PHP",
-            "keywords": [
-                "parser",
-                "php"
-            ],
-            "time": "2015-05-02 15:40:40"
         },
         {
             "name": "phpdocumentor/reflection-docblock",
@@ -4029,9 +3646,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "mariuzzo/laravel-js-localization": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

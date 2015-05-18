@@ -10,28 +10,6 @@ A Slack Invitator made with Lumen Framework and inspired by [rauchg/slackin](htt
 composer create-project vluzrmos/lumen-slackin
 ```
 
-## Dependencies
-
-That package uses [NodeJS](https://nodejs.org/) modules, 
-download it on [https://nodejs.org/](https://nodejs.org/) and install, 
-then you have to install nodejs dependencies:
-
-```bash
-# Installing global dependencies (with super-user, root, or administrator priviligies)
-npm install -g gulp forever
-```
-
-```bash
-# Installing local dependencies described on packages.json file
-npm install
-```
-
-And you have to install [Redis](http://redis.io/), for Real Time count users. On linux distros: 
-
-```bash
-sudo apt-get install redis-server
-```
-
 ## Instalation
 
 Copy <code>.env.example</code> to <code>.env</code> and:
@@ -42,22 +20,29 @@ Change the <code>SLACK_TOKEN</code> to the token of your user on slack team, wit
 
 ## Run
 
-Start the socket.io server:
+Start the queue listener:
 
 ```bash
-forever start socket.js
+php artisan queue:listen --timeout=240 1>> /dev/null 2>1& &
 ```
 
-The socket.io server will run at localhost:8080, if you need to modify it, just change it on your <code>.env</code> file <code>WS_PORT</code> and <code>WS_HOST</code>.
+> That will start the queue listener in background on \*nix computers, to stop that you need to know
+  how to kill an job on your system.
 
-> That will also check  updates of your team status every 3000 ms (3 seconds), modify it on socket.js if you want. 
-
-Compile the assets (css and javascript files):
+> Its hight recomended run the queue on system startup, on linux you should add the following lines to your crontab:
 
 ```bash
-gulp --production
+@reboot php artisan queue:listen --timeout=240 1>> /dev/null 2>1& &
 ```
-> Without that, if your application is in production mode (APP_ENV=production on .env file), some errors will occurs. 
+
+You may also need to add that command to your cronjob, that will update the users status on every minute:
+
+```bash
+* * * * *  php /path/to/that/project artisan slack:status
+```
+
+That will make your queue run in background and ignoring error messages.
+ 
 
 Start the http server:
 
@@ -65,10 +50,8 @@ Start the http server:
 php artisan serve
 ```
 
-By default, artisan serve starts on port 8000, 
-if you want to modify it, just starts it by passing <code>--port=NUMBER</code> or 
-just make a VirtualHost on your server (Apache or Nginx) with DocumentRoot on 
-<code>/path/to/that/project/public/</code> path.
+By default, artisan serve starts on port 8000, if you want to modify it, just starts it by passing <code>--port=NUMBER</code> or 
+just make a VirtualHost on your server (Apache or Nginx) with DocumentRoot on <code>/path/to/that/project/public/</code> path.
 
 ## Multi-Language Support
 

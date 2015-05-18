@@ -3,23 +3,6 @@
 
     app.config = app.config || {debug: false};
 
-    app.Listeners = app.Listeners || {};
-
-    app.Listeners.UsersActivity = {
-        whenActivity: function (data) {
-            if (app.config.debug) {
-                console.log(data);
-            }
-
-            $('#status').html(Lang.choice('slackin.users_online', data.active, data));
-        }
-    };
-
-    var socket = io(app.config.websocket.host + ":" + app.config.websocket.port);
-
-    socket.on('local:UsersActivity', app.Listeners.UsersActivity.whenActivity);
-
-
     $.fn.serializeObject = function () {
         var o = {};
         var a = this.serializeArray();
@@ -35,7 +18,6 @@
         });
         return o;
     };
-
 
     $(document).ready(function () {
         $('#form-invite').find('form').submit(function (e) {
