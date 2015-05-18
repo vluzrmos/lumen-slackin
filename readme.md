@@ -38,7 +38,7 @@ php artisan queue:listen --timeout=240 1>> /dev/null 2>1& &
 You may also need to add that command to your cronjob, that will update the users status on every minute:
 
 ```bash
-* * * * *  php /path/to/that/project artisan slack:status
+* * * * *  php /path/to/that/project/artisan slack:status
 ```
 
 That will make your queue run in background and ignoring error messages.
