@@ -37,10 +37,6 @@
         {
             "type": "vcs",
             "url": "git@github.com:vluzrmos/Laravel-JS-Localization.git"
-        },
-        {
-            "type": "vcs",
-            "url": "git@github.com:vluzrmos/image.git"
         }
     ],
 
