@@ -2,7 +2,7 @@
     "name": "vluzrmos/lumen-slackin",
     "description": "Lumen Slack Invitator.",
     "keywords": ["Slack", "lumen", "laravel"],
-    "license": "MIT",
+    "license": "DBAD",
     "type": "project",
     "require": {
         "laravel/lumen-framework": "5.0.*",
