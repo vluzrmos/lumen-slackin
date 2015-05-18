@@ -32,7 +32,7 @@ php artisan queue:listen --timeout=240 1>> /dev/null 2>1& &
 > Its hight recomended run the queue on system startup, on linux you should add the following lines to your crontab:
 
 ```bash
-@reboot php artisan queue:listen --timeout=240 1>> /dev/null 2>1& &
+@reboot php /path/to/that/project/artisan queue:listen --timeout=240 1>> /dev/null 2>1& &
 ```
 
 You may also need to add that command to your cronjob, that will update the users status on every minute:
