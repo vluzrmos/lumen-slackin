@@ -53,6 +53,14 @@ php artisan serve
 By default, artisan serve starts on port 8000, if you want to modify it, just starts it by passing <code>--port=NUMBER</code> or 
 just make a VirtualHost on your server (Apache or Nginx) with DocumentRoot on <code>/path/to/that/project/public/</code> path.
 
+## Badge is available
+
+If your need a badge to your slack invitator, just use:
+
+```html
+<img src="http://your-domain/badge.svg" />
+```
+
 ## Multi-Language Support
 
 By default the system will try to detect if the browser language is available on <code>resources/lang</code>, 
