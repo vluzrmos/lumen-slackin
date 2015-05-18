@@ -27,7 +27,7 @@ php artisan queue:listen --timeout=240 1>> /dev/null 2>1& &
 ```
 
 > That will start the queue listener in background on \*nix computers, to stop that you need to know
-  how to kill an job on your system.
+  how to kill a job on your system.
 
 > Its hight recomended run the queue on system startup, on linux you should add the following lines to your crontab:
 
