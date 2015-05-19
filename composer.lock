@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "e50be47be616e4669d5f06a37cab7d19",
+    "hash": "476732da49e15c4d59dc6f6b7a4d9496",
     "packages": [
         {
             "name": "badges/poser",
@@ -2640,6 +2640,33 @@
                 "environment"
             ],
             "time": "2014-12-05 15:19:21"
+        },
+        {
+            "name": "vluzrmos/badge-poser",
+            "version": "v0.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/vluzrmos/laravel-badge-poser.git",
+                "reference": "b7792e732ac539ddab848ea48d07c986bd722791"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/vluzrmos/laravel-badge-poser/zipball/b7792e732ac539ddab848ea48d07c986bd722791",
+                "reference": "b7792e732ac539ddab848ea48d07c986bd722791",
+                "shasum": ""
+            },
+            "require": {
+                "badges/poser": "~1.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Vluzrmos\\BadgePoser\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "description": "Laravel Badge Generator",
+            "time": "2015-05-19 02:11:58"
         },
         {
             "name": "vluzrmos/slack-api",
