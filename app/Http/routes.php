@@ -17,13 +17,13 @@ $app->group(['namespace' => 'App\Http\Controllers'], function () use ($app) {
 });
 
 $app->get('/badge.svg', function () {
-    /** @var \Illuminate\Cache\Repository $cache */
-    $cache = app('cache');
-
     /** @var \Illuminate\Http\Request $request */
     $request = app('request');
 
-    $totals = $cache->get(\App\Console\Commands\SlackStatusCommand::SLACK_TOTALS_KEY);
+	/** @var App\Services\SlackService $slack */
+	$slack = app('App\Services\SlackService');
+
+    $totals = $slack->getCachedUsersStatus();
 
     $renders = [new \PUGX\Poser\Render\SvgRender(), new \PUGX\Poser\Render\SvgFlatRender()];
 
