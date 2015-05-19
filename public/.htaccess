@@ -3,6 +3,9 @@
         Options -MultiViews
     </IfModule>
 
+    AddType image/svg+xml svg
+    AddType image/svg+xml svgz
+
     RewriteEngine On
 
     # Redirect Trailing Slashes...

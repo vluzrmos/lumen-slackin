@@ -61,6 +61,9 @@ If your need a badge to your slack invitator, just use:
 <img src="http://your-domain/badge.svg" />
 ```
 
+Example:
+[![Badge Laravel Brasil](http://laravelbrasil.vluzrmos.com.br/badge.svg)](http://laravelbrasil.vluzrmos.com.br)
+
 ## Multi-Language Support
 
 By default the system will try to detect if the browser language is available on <code>resources/lang</code>, 

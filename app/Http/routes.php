@@ -31,5 +31,5 @@ $app->get('/badge.svg', function () {
 
     $image =  $poser->generate('slack', $totals['active']."/".$totals['total'], 'F1504F', $request->get('format', 'flat'));
 
-    return $image;
+    return response($image, 200, ['Content-Type' => 'image/svg+xml']);
 });
