@@ -85,6 +85,8 @@ $app->register('App\Providers\ValidationServiceProvider');
 
 $app->register('Vluzrmos\SlackApi\SlackApiServiceProvider');
 
+$app->register('Vluzrmos\BadgePoser\BadgePoserServiceProvider');
+
 /*
 |--------------------------------------------------------------------------
 | Load The Application Routes

@@ -11,4 +11,5 @@
 /vendor
 /workbench
 /node_modules
+/studio.json
 .env
