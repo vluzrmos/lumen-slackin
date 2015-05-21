@@ -18,10 +18,11 @@ class BadgeController extends Controller
 	 */
 	public function generate(SlackService $slack, Poser $poser, Request $request){
 		$totals = $slack->getCachedUsersStatus();
+		$team   = $slack->getCachedTeamInfo();
 
 		app()->configure('slack-badge');
 
-		$response = $poser->generate(config('slack-badge.slogan'), $totals['active']."/".$totals['total'], config('slack-badge.color'), $request->get('format', config('slack-badge.format', 'flat')));
+		$response = $poser->generate($team['name'], $totals['active']."/".$totals['total'], config('slack-badge.color'), $request->get('format', config('slack-badge.format', 'flat')));
 
 		return $response;
 	}

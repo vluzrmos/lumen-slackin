@@ -1,7 +1,6 @@
 <?php
 
 return [
-	'slogan' => 'Laravel Brasil',
 	'color'  => 'F1504F',
-	'format' => 'flat'
+	'format' => 'flat' // allowed 'flat' and 'plastic'
 ];
