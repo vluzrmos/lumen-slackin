@@ -23,7 +23,7 @@ Change the <code>SLACK_TOKEN</code> to the token of your user on slack team, wit
 Start the queue listener:
 
 ```bash
-php artisan queue:listen --timeout=240 1>> /dev/null 2>1& &
+php artisan queue:listen --timeout=240 1>> /dev/null 2>&1 &
 ```
 
 > That will start the queue listener in background on \*nix computers, to stop that you need to know
@@ -32,13 +32,13 @@ php artisan queue:listen --timeout=240 1>> /dev/null 2>1& &
 > Its hight recomended run the queue on system startup, on linux you should add the following lines to your crontab:
 
 ```bash
-@reboot php /path/to/that/project/artisan queue:listen --timeout=240 1>> /dev/null 2>&1 &
+@reboot php /path/to/that/project/artisan queue:listen --timeout=240 1>> /dev/null 2>&1
 ```
 
 You may also need to add that command to your cronjob, that will update the users status on every minute:
 
 ```bash
-* * * * *  php /path/to/that/project/artisan schedule:run
+* * * * *  php /path/to/that/project/artisan schedule:run 1>> /dev/null 2>&1
 ```
 
 That will make your queue run in background and ignoring error messages.
