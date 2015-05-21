@@ -4,7 +4,7 @@ namespace App\Services;
 
 use Illuminate\Contracts\Cache\Factory as Cache;
 use Illuminate\Contracts\Cache\Repository;
-use Vluzrmos\SlackApi\SlackApiFacade as SlackApi;
+use Vluzrmos\SlackApi\Contracts\SlackApi;
 
 class SlackService
 {
@@ -26,9 +26,14 @@ class SlackService
     /** @var  Repository */
     protected $cache;
 
-    public function __construct(Cache $cache)
+	/** @var  SlackApi */
+	protected $slack;
+
+    public function __construct(Cache $cache, SlackApi $slack)
     {
         $this->cache = $cache;
+
+		$this->slack = $slack;
     }
 
 
@@ -39,7 +44,7 @@ class SlackService
      */
     public function inviteMember($email, $username = '')
     {
-        SlackApi::post('users.admin.invite', [
+        $this->slack->post('users.admin.invite', [
             'body' => [
                 'email' => $email,
                 'first_name' => $username,
@@ -67,7 +72,7 @@ class SlackService
      */
     public function getApiChannels()
     {
-        $jsonObject = SlackApi::get('channels.list');
+        $jsonObject = $this->slack->get('channels.list');
 
         $channels = array_filter($jsonObject['channels'], function ($channel) {
             return !$channel['is_archived'];
@@ -163,7 +168,7 @@ class SlackService
      */
     public function refreshTeamInfo()
     {
-        $info = SlackApi::get('team.info');
+        $info = $this->slack->get('team.info');
 
         $this->cache->forever(self::SLACK_TEAM_INFO_KEY, $info['team']);
 
@@ -177,7 +182,7 @@ class SlackService
      */
     public function refreshUsersStatus()
     {
-        $rtm = SlackApi::get('rtm.start');
+        $rtm = $this->slack->get('rtm.start');
 
         $totals = $this->getEmptyStatus();
 
