@@ -12,4 +12,5 @@
 /workbench
 /node_modules
 /studio.json
+.rocketeer
 .env
