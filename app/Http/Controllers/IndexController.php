@@ -6,7 +6,7 @@
  * Date: 09/05/15
  * Time: 03:04.
  */
-namespace app\Http\Controllers;
+namespace App\Http\Controllers;
 
 use App\Jobs\SlackInvitationJob;
 use App\Services\SlackService;
