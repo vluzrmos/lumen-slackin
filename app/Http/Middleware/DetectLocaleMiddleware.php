@@ -1,21 +1,30 @@
 <?php namespace App\Http\Middleware;
 
 use Closure;
-use Illuminate\Support\Facades\Lang;
+use Symfony\Component\Translation\TranslatorInterface;
 
 class DetectLocaleMiddleware
 {
+	/** @var TranslatorInterface  */
+	protected $translator;
 
-    /**
-     * Handle an incoming request.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
-     * @return mixed
-     */
+	/**
+	 * @param TranslatorInterface $translator
+	 */
+	public function __construct(TranslatorInterface $translator){
+		$this->translator = $translator;
+	}
+
+	/**
+	 * Handle an incoming request.
+	 *
+	 * @param  \Illuminate\Http\Request $request
+	 * @param  \Closure                 $next
+	 * @return mixed
+	 */
     public function handle($request, Closure $next)
     {
-        $pairs = preg_split('/; ?/', $request->header('Accept-Language'));
+		$pairs = preg_split('/; ?/', $request->header('Accept-Language'));
 
         foreach ($pairs as $pair) {
             $langs = preg_split('/, ?/', $pair);
@@ -24,7 +33,7 @@ class DetectLocaleMiddleware
                 $lang = strtolower(trim($lang));
 
                 if (is_dir(base_path('resources/lang/'.$lang))) {
-                    Lang::setLocale($lang);
+                    $this->translator->setLocale($lang);
 
                     return $next($request);
                 }
