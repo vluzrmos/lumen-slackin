@@ -1,4 +1,6 @@
-<?php namespace App\Jobs;
+<?php
+
+namespace App\Jobs;
 
 use App\Services\SlackService;
 use Illuminate\Contracts\Bus\SelfHandling;
@@ -15,7 +17,8 @@ class SlackInvitationJob extends Job implements SelfHandling
     }
 
     /**
-     * Event Self-Handled handle
+     * Event Self-Handled handle.
+     *
      * @param SlackService $slack
      */
     public function handle(SlackService $slack)

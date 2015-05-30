@@ -7,12 +7,12 @@ use Illuminate\Console\Command;
 
 class SlackTeamInfoCommand extends Command
 {
-
     /**
-     * Command Name
+     * Command Name.
+     *
      * @var string
      */
-    protected $name = "slack:team";
+    protected $name = 'slack:team';
 
     /**
      * @var SlackService
@@ -30,7 +30,7 @@ class SlackTeamInfoCommand extends Command
     }
 
     /**
-     *  Performs the event
+     *  Performs the event.
      */
     public function fire()
     {

@@ -7,12 +7,12 @@ use Illuminate\Console\Command;
 
 class SlackStatusCommand extends Command
 {
-
     /**
-     * Command Name
+     * Command Name.
+     *
      * @var string
      */
-    protected $name = "slack:status";
+    protected $name = 'slack:status';
     /**
      * @var SlackService
      */
@@ -29,14 +29,14 @@ class SlackStatusCommand extends Command
     }
 
     /**
-     *  Performs the event
+     *  Performs the event.
      */
     public function fire()
     {
-        $this->info("Checking for new status...");
+        $this->info('Checking for new status...');
 
         $this->slack->refreshUsersStatus();
 
-        $this->info("Done!");
+        $this->info('Done!');
     }
 }

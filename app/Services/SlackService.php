@@ -9,16 +9,17 @@ use Vluzrmos\SlackApi\Contracts\SlackApi;
 class SlackService
 {
     /**
-     * Key of totals cache
+     * Key of totals cache.
      */
     const SLACK_TEAM_INFO_KEY = 'slack.info';
     /**
-     * Key of totals cache
+     * Key of totals cache.
      */
     const SLACK_TOTALS_KEY = 'slack.totals';
 
     /**
-     * Config index
+     * Config index.
+     *
      * @var string
      */
     protected $configSpace = 'services.slack';
@@ -26,48 +27,49 @@ class SlackService
     /** @var  Repository */
     protected $cache;
 
-	/** @var  SlackApi */
-	protected $slack;
+    /** @var  SlackApi */
+    protected $slack;
 
     public function __construct(Cache $cache, SlackApi $slack)
     {
         $this->cache = $cache;
 
-		$this->slack = $slack;
+        $this->slack = $slack;
     }
 
-
     /**
-     * Invite a new member to slack team
+     * Invite a new member to slack team.
+     *
      * @param string $email
      * @param string $username
      */
     public function inviteMember($email, $username = '')
     {
         $this->slack->post('users.admin.invite', [
-            'body' => [
                 'email' => $email,
                 'first_name' => $username,
                 'set_active' => true,
                 'channels' => $this->getConfigChannelsString(),
-                '_attempts' => 1
-            ]
+                '_attempts' => 1,
         ]);
     }
 
     /**
-     * Get Configuration for a key with a default (if that doesn't exists)
+     * Get Configuration for a key with a default (if that doesn't exists).
+     *
      * @param $key
      * @param null $default
+     *
      * @return mixed
      */
-    public function getConfig($key, $default=null)
+    public function getConfig($key, $default = null)
     {
-        return config($this->configSpace.".".$key, $default);
+        return config($this->configSpace.'.'.$key, $default);
     }
 
     /**
-     * Get array of channels
+     * Get array of channels.
+     *
      * @return array
      */
     public function getApiChannels()
@@ -82,11 +84,13 @@ class SlackService
     }
 
     /**
-     * Get channels by name or ID
+     * Get channels by name or ID.
+     *
      * @param array $ids
+     *
      * @return array
      */
-    public function getApiChannelsById($ids=[])
+    public function getApiChannelsById($ids = [])
     {
         if (is_string($ids)) {
             $ids = preg_split('/, ?/', $ids);
@@ -100,7 +104,8 @@ class SlackService
     }
 
     /**
-     * Get api configurated channels and parse to string to be used in a api request
+     * Get api configurated channels and parse to string to be used in a api request.
+     *
      * @return string
      */
     public function getConfigChannelsString()
@@ -117,8 +122,10 @@ class SlackService
     }
 
     /**
-     * Parse channels IDs to string to be used in a api request
+     * Parse channels IDs to string to be used in a api request.
+     *
      * @param array $channels
+     *
      * @return string
      */
     public function parseChannelsToString($channels = [])
@@ -127,12 +134,12 @@ class SlackService
             return $channel['id'];
         }, $channels);
 
-        return implode(",", $channels);
+        return implode(',', $channels);
     }
-
 
     /**
      * Return the previus cached users status or generate a new one.
+     *
      * @return array
      */
     public function getCachedUsersStatus()
@@ -147,7 +154,6 @@ class SlackService
     }
 
     /**
-     *
      * @return array
      */
     public function getCachedTeamInfo()
@@ -163,7 +169,8 @@ class SlackService
     }
 
     /**
-     * Refresh Team info by Api data
+     * Refresh Team info by Api data.
+     *
      * @return array|null
      */
     public function refreshTeamInfo()
@@ -175,9 +182,9 @@ class SlackService
         return $info['team'];
     }
 
-
     /**
-     * Return the total users and logged users
+     * Return the total users and logged users.
+     *
      * @return array
      */
     public function refreshUsersStatus()
@@ -188,10 +195,10 @@ class SlackService
 
         foreach ($rtm['users'] as $user) {
             if ($this->isRealUser($user)) {
-                $totals['total'] ++;
+                $totals['total']++;
 
                 if ($this->isActiveUser($user)) {
-                    $totals['active'] ++;
+                    $totals['active']++;
                 }
             }
         }
@@ -202,20 +209,23 @@ class SlackService
     }
 
     /**
-     * Get an empty array of user status
+     * Get an empty array of user status.
+     *
      * @return array
      */
     public function getEmptyStatus()
     {
         return [
             'active' => 0,
-            'total' => 0
+            'total' => 0,
         ];
     }
 
     /**
-     * Tell whenever a user is active
+     * Tell whenever a user is active.
+     *
      * @param $user
+     *
      * @return bool
      */
     protected function isActiveUser($user)
@@ -224,12 +234,14 @@ class SlackService
     }
 
     /**
-     * Check if a user is a real, and not a bot
+     * Check if a user is a real, and not a bot.
+     *
      * @param $user
+     *
      * @return bool
      */
     protected function isRealUser($user)
     {
-        return (isset($user['is_bot']) and !$user['is_bot']) and $user['deleted']==false and $user['id']!='USLACKBOT';
+        return (isset($user['is_bot']) and !$user['is_bot']) and $user['deleted'] == false and $user['id'] != 'USLACKBOT';
     }
 }

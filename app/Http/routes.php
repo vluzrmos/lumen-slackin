@@ -15,7 +15,5 @@ $app->group(['namespace' => 'App\Http\Controllers'], function () use ($app) {
     $app->get('/', 'IndexController@getIndex');
     $app->post('/invite', 'IndexController@postInvite');
 
-	$app->get('/badge.svg', 'BadgeController@generate');
+    $app->get('/badge.svg', 'BadgeController@generate');
 });
-
-

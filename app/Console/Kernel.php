@@ -1,12 +1,12 @@
-<?php namespace App\Console;
+<?php
 
-use App\Console\Commands\SlackStatusCommand;
+namespace App\Console;
+
 use Illuminate\Console\Scheduling\Schedule;
 use Laravel\Lumen\Console\Kernel as ConsoleKernel;
 
 class Kernel extends ConsoleKernel
 {
-
     /**
      * The Artisan commands provided by your application.
      *
@@ -17,15 +17,14 @@ class Kernel extends ConsoleKernel
         'App\Console\Commands\SlackTeamInfoCommand',
     ];
 
-	/**
-	 * Define the application's command schedule.
-	 *
-	 * @param  \Illuminate\Console\Scheduling\Schedule  $schedule
-	 * @return void
-	 */
-	protected function schedule(Schedule $schedule)
-	{
-		// Schedule to check the users status
-		$schedule->command('slack:status')->cron('* * * * *')->withoutOverlapping();
-	}
+    /**
+     * Define the application's command schedule.
+     *
+     * @param \Illuminate\Console\Scheduling\Schedule $schedule
+     */
+    protected function schedule(Schedule $schedule)
+    {
+        // Schedule to check the users status
+        $schedule->command('slack:status')->cron('* * * * *')->withoutOverlapping();
+    }
 }

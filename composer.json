@@ -6,12 +6,12 @@
     "type": "project",
     "require": {
         "laravel/lumen-framework": "5.0.*",
-        "vlucas/phpdotenv": "~1.0",
-        "vluzrmos/badge-poser": "~1.0",
-        "predis/predis": "~1.0",
-        "illuminate/redis": "~5.0",
-        "badges/poser": "^1.1",
-        "vluzrmos/slack-api": "^0.1.0",
+        "vlucas/phpdotenv": "1.0.*",
+        "vluzrmos/badge-poser": "1.0.*",
+        "predis/predis": "1.0.*",
+        "illuminate/redis": "5.0.*",
+        "badges/poser": "1.1.*",
+        "vluzrmos/slack-api": "0.2.*",
         "vluzrmos/tinker":"1.0.*"
     },
     "require-dev": {

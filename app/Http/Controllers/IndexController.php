@@ -1,12 +1,12 @@
 <?php
+
 /**
  * Created by PhpStorm.
  * User: vluzrmos
  * Date: 09/05/15
- * Time: 03:04
+ * Time: 03:04.
  */
-
-namespace App\Http\Controllers;
+namespace app\Http\Controllers;
 
 use App\Jobs\SlackInvitationJob;
 use App\Services\SlackService;
@@ -15,7 +15,6 @@ use Illuminate\Http\Request;
 
 class IndexController extends Controller
 {
-
     /**
      * @var \Illuminate\Cache\Repository
      */
@@ -41,7 +40,7 @@ class IndexController extends Controller
     {
         $data = [
             'totals' => $this->slack->getCachedUsersStatus(),
-            'team'   => $this->slack->getCachedTeamInfo()
+            'team' => $this->slack->getCachedTeamInfo(),
         ];
 
         return view('slack.index', $data);
@@ -49,13 +48,14 @@ class IndexController extends Controller
 
     /**
      * @param Request $request
+     *
      * @return array
      */
     public function postInvite(Request $request)
     {
         $this->validate($request, [
             'username' => 'required|min_words:2',
-            'email'    => 'required|email'
+            'email' => 'required|email',
         ]);
 
         $this->dispatch(new SlackInvitationJob(
@@ -64,7 +64,7 @@ class IndexController extends Controller
         ));
 
         return [
-            'message' => trans('slackin.invited')
+            'message' => trans('slackin.invited'),
         ];
     }
 }
