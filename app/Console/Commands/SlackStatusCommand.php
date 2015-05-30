@@ -2,7 +2,7 @@
 
 namespace App\Console\Commands;
 
-use App\Services\SlackService;
+use App\Services\SlackStatusService;
 use Illuminate\Console\Command;
 
 class SlackStatusCommand extends Command
@@ -20,14 +20,14 @@ class SlackStatusCommand extends Command
 	protected $description = "Get the total and active users on team";
 
     /**
-     * @var SlackService
+     * @var SlackStatusService
      */
     private $slack;
 
     /**
-     * @param SlackService $slack
+     * @param SlackStatusService $slack
      */
-    public function __construct(SlackService $slack)
+    public function __construct(SlackStatusService $slack)
     {
         parent::__construct();
 

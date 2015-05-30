@@ -2,7 +2,7 @@
 
 namespace App\Jobs;
 
-use App\Services\SlackService;
+use App\Services\SlackTeamService;
 use Illuminate\Contracts\Bus\SelfHandling;
 
 class SlackInvitationJob extends Job implements SelfHandling
@@ -19,9 +19,9 @@ class SlackInvitationJob extends Job implements SelfHandling
     /**
      * Event Self-Handled handle.
      *
-     * @param SlackService $slack
+     * @param SlackTeamService $slack
      */
-    public function handle(SlackService $slack)
+    public function handle(SlackTeamService $slack)
     {
         $slack->inviteMember($this->email, $this->username);
     }

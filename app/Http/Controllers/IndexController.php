@@ -1,15 +1,9 @@
 <?php
 
-/**
- * Created by PhpStorm.
- * User: vluzrmos
- * Date: 09/05/15
- * Time: 03:04.
- */
 namespace App\Http\Controllers;
 
 use App\Jobs\SlackInvitationJob;
-use App\Services\SlackService;
+use App\Services\SlackStatusService;
 use Illuminate\Contracts\Cache\Factory as Cache;
 use Illuminate\Http\Request;
 
@@ -20,14 +14,14 @@ class IndexController extends Controller
      */
     protected $cache;
 
-    /** @var SlackService */
+    /** @var SlackStatusService */
     protected $slack;
 
     /**
      * @param Cache        $cache
-     * @param SlackService $slack
+     * @param SlackStatusService $slack
      */
-    public function __construct(Cache $cache, SlackService $slack)
+    public function __construct(Cache $cache, SlackStatusService $slack)
     {
         $this->cache = $cache;
         $this->slack = $slack;
@@ -39,8 +33,8 @@ class IndexController extends Controller
     public function getIndex()
     {
         $data = [
-            'totals' => $this->slack->getCachedUsersStatus(),
-            'team' => $this->slack->getCachedTeamInfo(),
+            'totals' => $this->slack->getUsersStatus(),
+            'team' => $this->slack->getTeamInfo(),
         ];
 
         return view('slack.index', $data);

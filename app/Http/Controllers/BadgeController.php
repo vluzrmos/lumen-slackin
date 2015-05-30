@@ -2,30 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use App\Services\SlackService;
+use App\Services\SlackBadgeService;
 use Illuminate\Http\Request;
-use Vluzrmos\BadgePoser\Contracts\Poser;
 
 class BadgeController extends Controller
 {
-    /**
-     * Generate the badge poser.
-     *
-     * @param SlackService $slack
-     * @param Poser        $poser
-     * @param Request      $request
-     *
-     * @return mixed
-     */
-    public function generate(SlackService $slack, Poser $poser, Request $request)
+	/**
+	 * Generate the badge poser.
+	 *
+	 * @param SlackBadgeService $badge
+	 * @param Request           $request
+	 * @return \Illuminate\Http\Response
+	 * @internal param SlackStatusService $slack
+	 * @internal param Poser $poser
+	 */
+    public function generate(SlackBadgeService $badge, Request $request)
     {
-        $totals = $slack->getCachedUsersStatus();
-        $team = $slack->getCachedTeamInfo();
-
-        app()->configure('slack-badge');
-
-        $response = $poser->generate($team['name'], $totals['active'].'/'.$totals['total'], config('slack-badge.color'), $request->get('format', config('slack-badge.format', 'flat')));
-
-        return $response;
+        return $badge->generate($request->get('format', 'flat'));
     }
 }
