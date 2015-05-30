@@ -4,7 +4,6 @@ namespace App\Console\Commands;
 
 use App\Services\SlackService;
 use Illuminate\Console\Command;
-use Illuminate\Support\Debug\Dumper;
 
 class SlackTeamInfoCommand extends Command
 {
@@ -26,20 +25,13 @@ class SlackTeamInfoCommand extends Command
     private $slack;
 
 	/**
-	 * @var Dumper
-	 */
-	private $dumper;
-
-	/**
 	 * @param SlackService $slack
-	 * @param Dumper       $dumper
 	 */
-    public function __construct(SlackService $slack, Dumper $dumper)
+    public function __construct(SlackService $slack)
     {
         parent::__construct();
 
         $this->slack = $slack;
-		$this->dumper = $dumper;
 	}
 
     /**
