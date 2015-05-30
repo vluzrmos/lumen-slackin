@@ -14,6 +14,11 @@ class SlackTeamInfoCommand extends Command
      */
     protected $name = 'slack:team';
 
+	/**
+	 * @var string
+	 */
+	protected $description = "Get info about the slack team";
+
     /**
      * @var SlackService
      */

@@ -13,6 +13,12 @@ class SlackStatusCommand extends Command
      * @var string
      */
     protected $name = 'slack:status';
+
+	/**
+	 * @var string
+	 */
+	protected $description = "Get the total and active users on team";
+
     /**
      * @var SlackService
      */
