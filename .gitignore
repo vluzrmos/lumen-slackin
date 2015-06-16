@@ -1,13 +1,6 @@
 /lumen.log
 /.idea
 /.idea/workspace.xml
-/public/build
-/public/css/all.css
-/public/css/all.css.map
-/public/js/all.js
-/public/js/all.js.map
-/public/js/app.min.js
-/public/js/app.min.js.map
 /vendor
 /workbench
 /node_modules

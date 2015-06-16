@@ -1,5 +1,4 @@
 var gulp = require("gulp");
-var shell = require("gulp-shell");
 var elixir = require('laravel-elixir');
 
 /*
@@ -16,8 +15,7 @@ var elixir = require('laravel-elixir');
 elixir(function(mix) {
     mix.scripts([
         'jquery.js',
-        'bootstrap.js',
-        'socket.io.js'
+        'bootstrap.js'
     ], 'public/js/all.js', 'public/js');
 
     mix.scripts(['app.js'], 'public/js/app.min.js', 'public/js');
