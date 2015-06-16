@@ -4,7 +4,7 @@ namespace App\Services;
 
 use Illuminate\Contracts\Cache\Factory as Cache;
 use Illuminate\Contracts\Cache\Repository;
-use Vluzrmos\SlackApi\Contracts\SlackApi;
+use Vluzrmos\SlackApi\Contracts\SlackUserAdmin;
 
 class SlackTeamService
 {
@@ -16,13 +16,13 @@ class SlackTeamService
 	/** @var  Repository */
 	protected $cache;
 
-	/** @var  SlackApi */
+	/** @var  SlackUserAdmin */
 	protected $slack;
 
 	/** @var SlackChannelsService  */
 	protected $channels;
 
-	public function __construct(Cache $cache, SlackApi $slack, SlackChannelsService $channels)
+	public function __construct(Cache $cache, SlackUserAdmin $slack, SlackChannelsService $channels)
 	{
 		$this->cache = $cache;
 
@@ -39,12 +39,9 @@ class SlackTeamService
 	 */
 	public function inviteMember($email, $username = '')
 	{
-		$this->slack->post('users.admin.invite', [
-			'email' => $email,
+		$this->slack->invite($email, [
 			'first_name' => $username,
-			'set_active' => true,
-			'channels' => $this->channels->getConfigChannelsString(),
-			'_attempts' => 1,
+			'channels' => $this->channels->getConfigChannelsString()
 		]);
 	}
 

@@ -4,7 +4,8 @@ namespace App\Services;
 
 use Illuminate\Contracts\Cache\Factory as Cache;
 use Illuminate\Contracts\Cache\Repository;
-use Vluzrmos\SlackApi\Contracts\SlackApi;
+use Vluzrmos\SlackApi\Contracts\SlackTeam;
+use Vluzrmos\SlackApi\Contracts\SlackRealTimeMessage;
 
 class SlackStatusService
 {
@@ -20,10 +21,13 @@ class SlackStatusService
     /** @var  Repository */
     protected $cache;
 
-    /** @var  SlackApi */
+    /** @var  SlackTeam */
     protected $slack;
 
-    public function __construct(Cache $cache, SlackApi $slack)
+	/** @var  SlackRealTimeMessage */
+	protected $slackRtm;
+
+    public function __construct(Cache $cache, SlackTeam $slack, SlackRealTimeMessage $slackRtm)
     {
         $this->cache = $cache;
 
@@ -68,7 +72,7 @@ class SlackStatusService
      */
     public function refreshTeamInfo()
     {
-        $info = $this->slack->get('team.info');
+        $info = $this->slack->info();
 
         $this->cache->forever(self::SLACK_TEAM_INFO_KEY, $info['team']);
 
@@ -82,7 +86,7 @@ class SlackStatusService
      */
     public function refreshUsersStatus()
     {
-        $rtm = $this->slack->get('rtm.start');
+        $rtm = $this->slackRtm->start();
 
         $totals = $this->getEmptyStatus();
 

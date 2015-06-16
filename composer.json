@@ -11,7 +11,7 @@
         "predis/predis": "1.0.*",
         "illuminate/redis": "5.0.*",
         "badges/poser": "1.1.*",
-        "vluzrmos/slack-api": "0.2.*",
+        "vluzrmos/slack-api": "0.4.*",
         "vluzrmos/tinker":"1.0.*"
     },
     "require-dev": {

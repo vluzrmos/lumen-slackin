@@ -2,7 +2,7 @@
 
 namespace App\Services;
 
-use Vluzrmos\SlackApi\Contracts\SlackApi;
+use Vluzrmos\SlackApi\Contracts\SlackChannel;
 
 class SlackChannelsService
 {
@@ -13,13 +13,13 @@ class SlackChannelsService
 	 */
 	protected $configSpace = 'services.slack';
 
-	/** @var  SlackApi */
+	/** @var  SlackChannel */
 	protected $slack;
 
 	/**
-	 * @param SlackApi $slack
+	 * @param SlackChannel $slack
 	 */
-	public function __construct(SlackApi $slack)
+	public function __construct(SlackChannel $slack)
 	{
 		$this->slack = $slack;
 	}
@@ -44,9 +44,9 @@ class SlackChannelsService
 	 */
 	public function getApiChannels()
 	{
-		$jsonObject = $this->slack->get('channels.list');
+		$all = $this->slack->lists();
 
-		$channels = array_filter($jsonObject['channels'], function ($channel) {
+		$channels = array_filter($all['channels'], function ($channel) {
 			return !$channel['is_archived'];
 		});
 
