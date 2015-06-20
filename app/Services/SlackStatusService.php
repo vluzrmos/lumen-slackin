@@ -32,6 +32,8 @@ class SlackStatusService
         $this->cache = $cache;
 
         $this->slack = $slack;
+
+		$this->slackRtm = $slackRtm;
     }
 
     /**
