@@ -13,8 +13,10 @@ class TranslatorServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton('Symfony\Component\Translation\TranslatorInterface', function () {
-            return $this->app['translator'];
-        });
+        $this->app->singleton(
+            'Symfony\Component\Translation\TranslatorInterface', function () {
+                return $this->app['translator'];
+            }
+        );
     }
 }

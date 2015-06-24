@@ -18,14 +18,20 @@ class SlackStatusService
      */
     const SLACK_TOTALS_KEY = 'slack.totals';
 
-    /** @var  Repository */
+    /**
+ * @var  Repository
+*/
     protected $cache;
 
-    /** @var  SlackTeam */
+    /**
+ * @var  SlackTeam
+*/
     protected $slack;
 
-	/** @var  SlackRealTimeMessage */
-	protected $slackRtm;
+    /**
+ * @var  SlackRealTimeMessage
+*/
+    protected $slackRtm;
 
     public function __construct(Cache $cache, SlackTeam $slack, SlackRealTimeMessage $slackRtm)
     {
@@ -33,7 +39,7 @@ class SlackStatusService
 
         $this->slack = $slack;
 
-		$this->slackRtm = $slackRtm;
+        $this->slackRtm = $slackRtm;
     }
 
     /**
@@ -57,7 +63,9 @@ class SlackStatusService
      */
     public function getTeamInfo()
     {
-        /** @var array|null $cached */
+        /**
+ * @var array|null $cached
+*/
         $cached = $this->cache->get(self::SLACK_TEAM_INFO_KEY);
 
         if (!$cached) {
@@ -144,25 +152,23 @@ class SlackStatusService
         return $this->isNotBot($user) and $this->isNotDeletedUser($user);
     }
 
-	/**
-	 * Check if the user is not a bot or Slackbot
-	 * @param $user
-	 * @return bool
-	 */
-	protected function isNotBot($user)
-	{
-		return (isset($user['is_bot']) and !$user['is_bot']) and $user['id'] != 'USLACKBOT';
-	}
+    /**
+     * Check if the user is not a bot or Slackbot
+     * @param $user
+     * @return bool
+     */
+    protected function isNotBot($user)
+    {
+        return (isset($user['is_bot']) and !$user['is_bot']) and $user['id'] != 'USLACKBOT';
+    }
 
-	/**
-	 * Check if the user is not a deleted user
-	 * @param $user
-	 * @return bool
-	 */
-	protected function isNotDeletedUser($user)
-	{
-		return $user['deleted'] == false;
-	}
-
+    /**
+     * Check if the user is not a deleted user
+     * @param $user
+     * @return bool
+     */
+    protected function isNotDeletedUser($user)
+    {
+        return $user['deleted'] == false;
+    }
 }
-

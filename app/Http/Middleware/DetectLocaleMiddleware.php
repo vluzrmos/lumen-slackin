@@ -7,7 +7,9 @@ use Symfony\Component\Translation\TranslatorInterface;
 
 class DetectLocaleMiddleware
 {
-    /** @var TranslatorInterface  */
+    /**
+ * @var TranslatorInterface
+*/
     protected $translator;
 
     /**
