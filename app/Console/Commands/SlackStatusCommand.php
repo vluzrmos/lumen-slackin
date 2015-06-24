@@ -3,7 +3,6 @@
 namespace App\Console\Commands;
 
 use App\Services\SlackStatusService;
-use Illuminate\Console\Command;
 
 class SlackStatusCommand extends Command
 {
@@ -39,10 +38,24 @@ class SlackStatusCommand extends Command
      */
     public function fire()
     {
-        $this->info('Checking for new status...');
+        $this->info(trans('slackin.updating_status'));
 
-        $this->slack->refreshUsersStatus();
+        $status = $this->slack->refreshUsersStatus();
 
-        $this->info('Done!');
+        $this->infoStatusUser($status);
+
+        $this->info(trans('slackin.command_done'));
+    }
+
+    /**
+     * Show info message about status of users
+     *
+     * @param array $status
+     */
+    public function infoStatusUser(array $status)
+    {
+        $message = strip_tags(trans_choice('slackin.users_online', $status['active'], $status));
+
+        $this->info($message);
     }
 }

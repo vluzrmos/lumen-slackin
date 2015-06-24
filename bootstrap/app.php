@@ -83,13 +83,11 @@ $app->register('App\Providers\AppServiceProvider');
 
 $app->register('App\Providers\ValidationServiceProvider');
 
-$app->register('\App\Providers\TranslatorServiceProvider');
+$app->register('App\Providers\TranslatorServiceProvider');
 
 $app->register('Vluzrmos\SlackApi\SlackApiServiceProvider');
 
 $app->register('Vluzrmos\BadgePoser\BadgePoserServiceProvider');
-
-$app->register('Vluzrmos\Tinker\TinkerServiceProvider');
 
 /*
 |--------------------------------------------------------------------------

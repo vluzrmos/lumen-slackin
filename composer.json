@@ -10,12 +10,11 @@
         "vluzrmos/badge-poser": "1.0.*",
         "predis/predis": "1.0.*",
         "illuminate/redis": "5.0.*",
-        "badges/poser": "1.1.*",
-        "vluzrmos/slack-api": "0.4.*",
-        "vluzrmos/tinker":"1.0.*"
+        "vluzrmos/slack-api": "0.4.*"
     },
     "require-dev": {
-        "phpunit/phpunit": "~4.0"
+        "phpunit/phpunit": "~4.0",
+        "vluzrmos/tinker":"1.0.*"
     },
     "autoload": {
         "psr-4": {

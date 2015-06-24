@@ -17,6 +17,10 @@ use Symfony\Component\Console\Output\ConsoleOutput;
 
 $app = require __DIR__.'/bootstrap/app.php';
 
+if(class_exists('Vluzrmos\Tinker\TinkerServiceProvider')) {
+    $app->register('Vluzrmos\Tinker\TinkerServiceProvider');
+}
+
 /*
 |--------------------------------------------------------------------------
 | Run The Artisan Application

@@ -3,7 +3,6 @@
 namespace App\Console\Commands;
 
 use App\Services\SlackStatusService;
-use Illuminate\Console\Command;
 
 class SlackTeamInfoCommand extends Command
 {
@@ -39,10 +38,12 @@ class SlackTeamInfoCommand extends Command
      */
     public function fire()
     {
-        $this->info('Checking slack team info...');
+        $this->info(trans('slackin.updating_team_info'));
 
-        $this->slack->refreshTeamInfo();
+        $info = $this->slack->refreshTeamInfo();
 
-        $this->info('Done!');
+        $this->horizontalTable($info);
+
+        $this->info(trans('slackin.command_done'));
     }
 }
