@@ -4,6 +4,13 @@
 
 A Slack Invitator made with Lumen Framework and inspired by [rauchg/slackin](https://github.com/rauchg/slackin).
 
+That application uses some of my awesome packages:
+
+* [Badge Poser](https://github.com/vluzrmos/laravel-badge-poser) - Badges generator to Laravel.
+* [Slack API](https://github.com/vluzrmos/laravel-slack-api) - Laravel easy Slack API.
+* [Locale Detector](https://github.com/vluzrmos/laravel-locale-detector) - Automatic set locale based on user browser preferences.
+* [Lumen Tinker](https://github.com/vluzrmos/lumen-tinker) - An interactive shell to Lumen.
+
 ## Download the source
 
 ```bash
