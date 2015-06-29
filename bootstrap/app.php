@@ -19,7 +19,7 @@ $app = new Laravel\Lumen\Application(
     realpath(__DIR__.'/../')
 );
 
-$app->withFacades();
+// $app->withFacades();
 
 // $app->withEloquent();
 
@@ -56,7 +56,6 @@ $app->singleton(
 */
 
 $app->middleware([
-  'App\Http\Middleware\DetectLocaleMiddleware',
   'Illuminate\Cookie\Middleware\EncryptCookies',
   'Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse',
   'Illuminate\Session\Middleware\StartSession',
@@ -88,6 +87,8 @@ $app->register('App\Providers\TranslatorServiceProvider');
 $app->register('Vluzrmos\SlackApi\SlackApiServiceProvider');
 
 $app->register('Vluzrmos\BadgePoser\BadgePoserServiceProvider');
+
+$app->register('Vluzrmos\LocaleDetector\LocaleDetectorServiceProvider');
 
 /*
 |--------------------------------------------------------------------------

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "14c5e95fc5199d6522e812131811ba41",
+    "hash": "01723d0d0e07071b003042f7494c61cd",
     "packages": [
         {
             "name": "badges/poser",
@@ -1783,21 +1783,21 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "1.19.0",
+            "version": "1.20.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "68868e0b02d2d803d0052a59d4e5003cccf87320"
+                "reference": "bfd3eaba109c9a2405c92174c8e17f20c2b9caf3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/68868e0b02d2d803d0052a59d4e5003cccf87320",
-                "reference": "68868e0b02d2d803d0052a59d4e5003cccf87320",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/bfd3eaba109c9a2405c92174c8e17f20c2b9caf3",
+                "reference": "bfd3eaba109c9a2405c92174c8e17f20c2b9caf3",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.0",
-                "symfony/translation": "~2.6"
+                "symfony/translation": "~2.6|~3.0"
             },
             "require-dev": {
                 "phpunit/phpunit": "~4.0"
@@ -1826,7 +1826,7 @@
                 "datetime",
                 "time"
             ],
-            "time": "2015-05-09 03:23:44"
+            "time": "2015-06-25 04:19:39"
         },
         {
             "name": "nikic/fast-route",
@@ -2683,17 +2683,58 @@
             "time": "2015-06-24 21:47:53"
         },
         {
-            "name": "vluzrmos/slack-api",
-            "version": "v0.4.1",
+            "name": "vluzrmos/locale-detector",
+            "version": "v0.0.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/vluzrmos/laravel-slack-api.git",
-                "reference": "2792dc7c8941629e90365d4a5d3ef9197f9a29a7"
+                "url": "https://github.com/vluzrmos/laravel-locale-detector.git",
+                "reference": "d81f8c7ee6e4a5363cc4202cc505f2cfb389b3d7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vluzrmos/laravel-slack-api/zipball/2792dc7c8941629e90365d4a5d3ef9197f9a29a7",
-                "reference": "2792dc7c8941629e90365d4a5d3ef9197f9a29a7",
+                "url": "https://api.github.com/repos/vluzrmos/laravel-locale-detector/zipball/d81f8c7ee6e4a5363cc4202cc505f2cfb389b3d7",
+                "reference": "d81f8c7ee6e4a5363cc4202cc505f2cfb389b3d7",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "5.0.*|5.1.*"
+            },
+            "type": "package",
+            "autoload": {
+                "psr-4": {
+                    "Vluzrmos\\": "src/Vluzrmos/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Vagner do Carmo",
+                    "email": "vluzrmos@gmail.com"
+                }
+            ],
+            "description": "A Laravel and Lumen Automatic Locale Detector.",
+            "keywords": [
+                "laravel",
+                "locale",
+                "lumen"
+            ],
+            "time": "2015-06-29 22:48:34"
+        },
+        {
+            "name": "vluzrmos/slack-api",
+            "version": "v0.4.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/vluzrmos/laravel-slack-api.git",
+                "reference": "9a75ae2d21e5c045f972eef7220b5c727fa88e78"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/vluzrmos/laravel-slack-api/zipball/9a75ae2d21e5c045f972eef7220b5c727fa88e78",
+                "reference": "9a75ae2d21e5c045f972eef7220b5c727fa88e78",
                 "shasum": ""
             },
             "require": {
@@ -2706,7 +2747,10 @@
             "autoload": {
                 "psr-4": {
                     "Vluzrmos\\": "src/Vluzrmos/"
-                }
+                },
+                "files": [
+                    "src/Vluzrmos/SlackApi/helpers.php"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -2724,7 +2768,7 @@
                 "lumen",
                 "slack"
             ],
-            "time": "2015-06-16 15:47:03"
+            "time": "2015-06-27 13:53:30"
         }
     ],
     "packages-dev": [
