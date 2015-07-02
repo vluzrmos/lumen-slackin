@@ -18,7 +18,7 @@ abstract class Command extends IlluminateCommand
 
         $lines = [];
 
-        foreach($rows as $key => $value) {
+        foreach ($rows as $key => $value) {
             $lines[] = $this->getTableLine($key, $value);
         }
 
@@ -26,7 +26,7 @@ abstract class Command extends IlluminateCommand
 
         $this->writeTableLine($linesMaxLength);
 
-        foreach($lines as $line) {
+        foreach ($lines as $line) {
             $this->output->writeln($line);
         }
 
@@ -58,7 +58,7 @@ abstract class Command extends IlluminateCommand
     {
         $size = 0;
 
-        foreach($strings as $string) {
+        foreach ($strings as $string) {
             $size = max($size, strlen($string));
         }
 
@@ -70,7 +70,8 @@ abstract class Command extends IlluminateCommand
      * @param int $length Length of the line
      * @param string $separator Chacactere used for the line
      */
-    private function writeTableLine($length, $separator = '-') {
+    private function writeTableLine($length, $separator = '-')
+    {
         $this->output->writeln(substr(str_repeat($separator, $length), 0, $length));
     }
 }

@@ -14,18 +14,18 @@ class SlackTeamService
     const SLACK_TEAM_INFO_KEY = 'slack.info';
 
     /**
- * @var  Repository
-*/
+     * @var  Repository
+     */
     protected $cache;
 
     /**
- * @var  SlackUserAdmin
-*/
+     * @var  SlackUserAdmin
+     */
     protected $slack;
 
     /**
- * @var SlackChannelsService
-*/
+     * @var SlackChannelsService
+     */
     protected $channels;
 
     public function __construct(Cache $cache, SlackUserAdmin $slack, SlackChannelsService $channels)
@@ -47,8 +47,8 @@ class SlackTeamService
     {
         $this->slack->invite(
             $email, [
-            'first_name' => $username,
-            'channels' => $this->channels->getConfigChannelsString()
+                'first_name' => $username,
+                'channels' => $this->channels->getConfigChannelsString()
             ]
         );
     }

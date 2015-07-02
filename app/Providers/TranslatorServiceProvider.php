@@ -15,8 +15,8 @@ class TranslatorServiceProvider extends ServiceProvider
     {
         $this->app->singleton(
             'Symfony\Component\Translation\TranslatorInterface', function () {
-                return $this->app['translator'];
-            }
+            return $this->app['translator'];
+        }
         );
     }
 }

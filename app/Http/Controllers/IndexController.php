@@ -15,12 +15,12 @@ class IndexController extends Controller
     protected $cache;
 
     /**
- * @var SlackStatusService
-*/
+     * @var SlackStatusService
+     */
     protected $slack;
 
     /**
-     * @param Cache              $cache
+     * @param Cache $cache
      * @param SlackStatusService $slack
      */
     public function __construct(Cache $cache, SlackStatusService $slack)
@@ -51,8 +51,8 @@ class IndexController extends Controller
     {
         $this->validate(
             $request, [
-            'username' => 'required|min_words:2',
-            'email' => 'required|email',
+                'username' => 'required|min_words:2',
+                'email' => 'required|email',
             ]
         );
 

@@ -24,8 +24,8 @@ class ValidationServiceProvider extends ServiceProvider
          */
         $this->app['validator']->extend(
             'min_words', function ($attribute, $value, $parameters) {
-                return str_word_count($value) >= array_get($parameters, 0, 1);
-            }
+            return str_word_count($value) >= array_get($parameters, 0, 1);
+        }
         );
 
         /*
@@ -34,8 +34,8 @@ class ValidationServiceProvider extends ServiceProvider
          */
         $this->app['validator']->extend(
             'max_words', function ($attribute, $value, $parameters) {
-                return str_word_count($value) <= array_get($parameters, 0, 1);
-            }
+            return str_word_count($value) <= array_get($parameters, 0, 1);
+        }
         );
 
         /*
@@ -43,8 +43,8 @@ class ValidationServiceProvider extends ServiceProvider
          */
         $this->app['validator']->replacer(
             'min_words', function ($message, $attribute, $rule, $parameters) {
-                return str_replace(':words', $parameters[0], $message);
-            }
+            return str_replace(':words', $parameters[0], $message);
+        }
         );
 
         /*
@@ -52,8 +52,8 @@ class ValidationServiceProvider extends ServiceProvider
          */
         $this->app['validator']->replacer(
             'max_words', function ($message, $attribute, $rule, $parameters) {
-                return str_replace(':words', $parameters[0], $message);
-            }
+            return str_replace(':words', $parameters[0], $message);
+        }
         );
     }
 }

@@ -4,8 +4,8 @@ namespace App\Services;
 
 use Illuminate\Contracts\Cache\Factory as Cache;
 use Illuminate\Contracts\Cache\Repository;
-use Vluzrmos\SlackApi\Contracts\SlackTeam;
 use Vluzrmos\SlackApi\Contracts\SlackRealTimeMessage;
+use Vluzrmos\SlackApi\Contracts\SlackTeam;
 
 class SlackStatusService
 {
@@ -19,18 +19,18 @@ class SlackStatusService
     const SLACK_TOTALS_KEY = 'slack.totals';
 
     /**
- * @var  Repository
-*/
+     * @var  Repository
+     */
     protected $cache;
 
     /**
- * @var  SlackTeam
-*/
+     * @var  SlackTeam
+     */
     protected $slack;
 
     /**
- * @var  SlackRealTimeMessage
-*/
+     * @var  SlackRealTimeMessage
+     */
     protected $slackRtm;
 
     public function __construct(Cache $cache, SlackTeam $slack, SlackRealTimeMessage $slackRtm)
@@ -64,8 +64,8 @@ class SlackStatusService
     public function getTeamInfo()
     {
         /**
- * @var array|null $cached
-*/
+         * @var array|null $cached
+         */
         $cached = $this->cache->get(self::SLACK_TEAM_INFO_KEY);
 
         if (!$cached) {
@@ -124,7 +124,7 @@ class SlackStatusService
     {
         return [
             'active' => 0,
-            'total'  => 0,
+            'total' => 0,
         ];
     }
 
