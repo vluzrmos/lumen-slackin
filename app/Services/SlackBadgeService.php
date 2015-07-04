@@ -22,7 +22,7 @@ class SlackBadgeService
 
     /**
      * @param SlackStatusService $slack
-     * @param Poser $poser
+     * @param Poser              $poser
      */
     public function __construct(SlackStatusService $slack, Poser $poser)
     {
@@ -44,7 +44,7 @@ class SlackBadgeService
         $team = $this->slack->getTeamInfo();
 
         $subject = $team['name'];
-        $status = $totals['active'] . '/' . $totals['total'];
+        $status = $totals['active'].'/'.$totals['total'];
         $color = config('slack-badge.color', 'F1504');
         $format = config('slack-badge.format', $format);
 

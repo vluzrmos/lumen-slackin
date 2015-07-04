@@ -37,7 +37,7 @@ abstract class Command extends IlluminateCommand
      *
      * Get a string for a given row (header, content)
      *
-     * @param string $header Title of the header
+     * @param string $header  Title of the header
      * @param string $content content of the header
      *
      * @return string
@@ -67,7 +67,7 @@ abstract class Command extends IlluminateCommand
 
     /**
      * Writes a line with a given separator
-     * @param int $length Length of the line
+     * @param int    $length    Length of the line
      * @param string $separator Chacactere used for the line
      */
     private function writeTableLine($length, $separator = '-')

@@ -7,6 +7,10 @@ use App\Services\SlackStatusService;
 use Illuminate\Contracts\Cache\Factory as Cache;
 use Illuminate\Http\Request;
 
+/**
+ * Class IndexController
+ * @package App\Http\Controllers
+ */
 class IndexController extends Controller
 {
     /**
@@ -20,7 +24,7 @@ class IndexController extends Controller
     protected $slack;
 
     /**
-     * @param Cache $cache
+     * @param Cache              $cache
      * @param SlackStatusService $slack
      */
     public function __construct(Cache $cache, SlackStatusService $slack)
@@ -50,7 +54,8 @@ class IndexController extends Controller
     public function postInvite(Request $request)
     {
         $this->validate(
-            $request, [
+            $request,
+            [
                 'username' => 'required|min_words:2',
                 'email' => 'required|email',
             ]

@@ -47,14 +47,14 @@ class SlackChannelsService
     /**
      * Get Configuration for a key with a default (if that doesn't exists).
      *
-     * @param $key
+     * @param      $key
      * @param null $default
      *
      * @return mixed
      */
     protected function getConfig($key, $default = null)
     {
-        return config($this->configSpace . '.' . $key, $default);
+        return config($this->configSpace.'.'.$key, $default);
     }
 
     /**
