@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'languages' => ['pt-BR' => 'pt-br', 'en'],
+    'languages' => ['pt_BR', 'en'],
 ];

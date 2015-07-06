@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "9e2bc21a8ac44db5fa61c94e55566b0f",
+    "hash": "68fa03b1870ad40b8d157c2d5762a283",
     "packages": [
         {
             "name": "badges/poser",
@@ -2684,23 +2684,22 @@
         },
         {
             "name": "vluzrmos/language-detector",
-            "version": "v0.1.2",
+            "version": "v0.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vluzrmos/laravel-language-detector.git",
-                "reference": "465c70e9b2a8b1a4cf587e74bd9595e22b1b3cf5"
+                "reference": "37269955f4c99c16e95e964bae03330e80511598"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vluzrmos/laravel-language-detector/zipball/465c70e9b2a8b1a4cf587e74bd9595e22b1b3cf5",
-                "reference": "465c70e9b2a8b1a4cf587e74bd9595e22b1b3cf5",
+                "url": "https://api.github.com/repos/vluzrmos/laravel-language-detector/zipball/37269955f4c99c16e95e964bae03330e80511598",
+                "reference": "37269955f4c99c16e95e964bae03330e80511598",
                 "shasum": ""
             },
             "require": {
                 "illuminate/config": "~5.0",
                 "illuminate/support": "~5.0",
-                "illuminate/translation": "~5.0",
-                "willdurand/negotiation": "1.3.*"
+                "illuminate/translation": "~5.0"
             },
             "require-dev": {
                 "mockery/mockery": "0.9.*",
@@ -2731,7 +2730,7 @@
                 "locale",
                 "lumen"
             ],
-            "time": "2015-07-04 05:05:54"
+            "time": "2015-07-06 17:51:17"
         },
         {
             "name": "vluzrmos/slack-api",
@@ -2779,55 +2778,6 @@
                 "slack"
             ],
             "time": "2015-06-27 13:53:30"
-        },
-        {
-            "name": "willdurand/negotiation",
-            "version": "1.3.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/willdurand/Negotiation.git",
-                "reference": "d7fa4ce4a0436915b9ba9f7cb5ff37719f0a834c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/willdurand/Negotiation/zipball/d7fa4ce4a0436915b9ba9f7cb5ff37719f0a834c",
-                "reference": "d7fa4ce4a0436915b9ba9f7cb5ff37719f0a834c",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.3-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "Negotiation": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "William Durand",
-                    "email": "william.durand1@gmail.com"
-                }
-            ],
-            "description": "Content Negotiation tools for PHP provided as a standalone library.",
-            "homepage": "http://williamdurand.fr/Negotiation/",
-            "keywords": [
-                "accept",
-                "content",
-                "format",
-                "header",
-                "negotiation"
-            ],
-            "time": "2014-10-02 07:26:00"
         }
     ],
     "packages-dev": [
@@ -3473,16 +3423,16 @@
         },
         {
             "name": "phpunit/phpunit-mock-objects",
-            "version": "2.3.4",
+            "version": "2.3.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit-mock-objects.git",
-                "reference": "92408bb1968a81b3217a6fdf6c1a198da83caa35"
+                "reference": "1c330b1b6e1ea8fd15f2fbea46770576e366855c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/92408bb1968a81b3217a6fdf6c1a198da83caa35",
-                "reference": "92408bb1968a81b3217a6fdf6c1a198da83caa35",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/1c330b1b6e1ea8fd15f2fbea46770576e366855c",
+                "reference": "1c330b1b6e1ea8fd15f2fbea46770576e366855c",
                 "shasum": ""
             },
             "require": {
@@ -3524,7 +3474,7 @@
                 "mock",
                 "xunit"
             ],
-            "time": "2015-06-11 15:55:48"
+            "time": "2015-07-04 05:41:32"
         },
         {
             "name": "psy/psysh",
