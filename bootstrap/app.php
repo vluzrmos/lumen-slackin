@@ -85,7 +85,7 @@ $app->register('App\Providers\ValidationServiceProvider');
 $app->register('App\Providers\TranslatorServiceProvider');
 $app->register('Vluzrmos\SlackApi\SlackApiServiceProvider');
 $app->register('Vluzrmos\BadgePoser\BadgePoserServiceProvider');
-$app->register('Vluzrmos\LanguageDetector\LanguageDetectorServiceProvider');
+$app->register('Vluzrmos\LanguageDetector\Providers\LanguageDetectorServiceProvider');
 
 /*
 |--------------------------------------------------------------------------
@@ -98,6 +98,12 @@ $app->register('Vluzrmos\LanguageDetector\LanguageDetectorServiceProvider');
 |
 */
 
-require __DIR__.'/../app/Http/routes.php';
+// if you are using URI language detector driver, uncomment this line
+// $options['prefix'] = app('language.routePrefix');
+$options['namespace'] = 'App\Http\Controllers';
+
+$app->group($options, function () use ($app) {
+    require __DIR__.'/../app/Http/routes.php';
+});
 
 return $app;

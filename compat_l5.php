@@ -15,7 +15,6 @@ if (!function_exists('config_path')) {
 }
 
 if (!function_exists('public_path')) {
-
     /**
      * Return the path to public dir.
      *
