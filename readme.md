@@ -85,6 +85,16 @@ if available will setup. Available languages:
 
 That project uses [Twitter Bootstrap 3](http://getbootstrap.com), and it is compatible on small devices.
 
+## Using Lumen Slackin
+
+Your team are using this project? Put your link here:
+
+- [CakePHP Brasil](http://slack.cakephpbrasil.com.br/)
+- [Laravel Brasil](http://slack.laravel.com.br)
+- [VueSlack](http://vueslack.com)
+
+> Note: Consider to send a PR to master branch.
+
 ## License
 
 [DBAD](http://www.dbad-license.org/).
