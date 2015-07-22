@@ -1617,16 +1617,16 @@
         },
         {
             "name": "laravel/lumen-framework",
-            "version": "v5.1.2",
+            "version": "v5.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/lumen-framework.git",
-                "reference": "f5d6c5e9fd43abf2d3904607c95dc2864c761945"
+                "reference": "0ec7ffaf1e61a7fb15f24656d2d63ea7e216447d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/lumen-framework/zipball/f5d6c5e9fd43abf2d3904607c95dc2864c761945",
-                "reference": "f5d6c5e9fd43abf2d3904607c95dc2864c761945",
+                "url": "https://api.github.com/repos/laravel/lumen-framework/zipball/0ec7ffaf1e61a7fb15f24656d2d63ea7e216447d",
+                "reference": "0ec7ffaf1e61a7fb15f24656d2d63ea7e216447d",
                 "shasum": ""
             },
             "require": {
@@ -1698,7 +1698,7 @@
                 "laravel",
                 "lumen"
             ],
-            "time": "2015-07-12 02:19:42"
+            "time": "2015-07-19 18:25:14"
         },
         {
             "name": "monolog/monolog",
@@ -2045,16 +2045,16 @@
         },
         {
             "name": "psy/psysh",
-            "version": "v0.5.1",
+            "version": "v0.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bobthecow/psysh.git",
-                "reference": "e5a46a767928e85f1f47dda654beda8c680ddd94"
+                "reference": "aaf8772ade08b5f0f6830774a5d5c2f800415975"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/e5a46a767928e85f1f47dda654beda8c680ddd94",
-                "reference": "e5a46a767928e85f1f47dda654beda8c680ddd94",
+                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/aaf8772ade08b5f0f6830774a5d5c2f800415975",
+                "reference": "aaf8772ade08b5f0f6830774a5d5c2f800415975",
                 "shasum": ""
             },
             "require": {
@@ -2113,7 +2113,7 @@
                 "interactive",
                 "shell"
             ],
-            "time": "2015-07-03 16:48:00"
+            "time": "2015-07-16 15:26:57"
         },
         {
             "name": "react/promise",
@@ -2891,16 +2891,16 @@
         },
         {
             "name": "vluzrmos/language-detector",
-            "version": "v1.0.0",
+            "version": "v1.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vluzrmos/laravel-language-detector.git",
-                "reference": "e9a776c70c79f304a409431d63871bea367f455a"
+                "reference": "f678199a5a93f0ccf7d4feb544ec8e8ce442bd3b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vluzrmos/laravel-language-detector/zipball/e9a776c70c79f304a409431d63871bea367f455a",
-                "reference": "e9a776c70c79f304a409431d63871bea367f455a",
+                "url": "https://api.github.com/repos/vluzrmos/laravel-language-detector/zipball/f678199a5a93f0ccf7d4feb544ec8e8ce442bd3b",
+                "reference": "f678199a5a93f0ccf7d4feb544ec8e8ce442bd3b",
                 "shasum": ""
             },
             "require": {
@@ -2930,7 +2930,7 @@
                     "email": "vluzrmos@gmail.com"
                 }
             ],
-            "description": "A Laravel and Lumen Language Detector.",
+            "description": "Detect the language for your application using browser preferences, subdomains or route prefixes.",
             "keywords": [
                 "i18n",
                 "language",
@@ -2938,7 +2938,7 @@
                 "locale",
                 "lumen"
             ],
-            "time": "2015-07-15 04:55:59"
+            "time": "2015-07-22 12:13:23"
         },
         {
             "name": "vluzrmos/slack-api",

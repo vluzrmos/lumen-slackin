@@ -78,8 +78,6 @@ $app->middleware([
 |
 */
 
-$app->configure('lang-detector');
-
 $app->register('App\Providers\AppServiceProvider');
 $app->register('App\Providers\ValidationServiceProvider');
 $app->register('App\Providers\TranslatorServiceProvider');
