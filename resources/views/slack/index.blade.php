@@ -11,9 +11,11 @@
             {!! trans('slackin.join', ['team' => $team['name']]) !!}
         </div>
 
+        @if(isset($totals, $totals['active'], $totals['total']))
         <div id="status" >
             {!! trans_choice('slackin.users_online', $totals['active'], $totals) !!}
         </div>
+        @endif
 
         <div id="form-invite" class="col-sm-6 col-sm-offset-3">
             <div id="validation-message"></div>

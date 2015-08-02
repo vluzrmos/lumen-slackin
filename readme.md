@@ -29,6 +29,7 @@ Change the <code>SLACK_TOKEN</code> to the token of your user on slack team, wit
 
 ## Run
 
+## Queue
 Start the queue listener:
 
 ```bash
@@ -44,6 +45,8 @@ php artisan queue:listen --timeout=240 1>> /dev/null 2>&1 &
 @reboot php /path/to/that/project/artisan queue:listen --timeout=240 1>> /dev/null 2>&1
 ```
 
+### Scheduled Tasks (Optional)
+
 You may also need to add that command to your cronjob, that will update the users status on every minute:
 
 ```bash
@@ -51,7 +54,14 @@ You may also need to add that command to your cronjob, that will update the user
 ```
 
 That will make your queue run in background and ignoring error messages.
- 
+
+**Note:** If you do not want to use that feature, you just need to set the environment
+variable `SLACK_STATUS_ENABLED` to `false` on your `.env` file, that will hide the message
+about users active (online/total) of your team on the homepage:
+
+    SLACK_STATUS_ENABLED=false
+
+### HTTP Server
 
 Start the http server:
 
