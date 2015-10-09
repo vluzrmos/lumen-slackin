@@ -102,6 +102,7 @@ Your team are using this project? Put your link here:
 - [CakePHP Brasil](http://slack.cakephpbrasil.com.br/)
 - [Laravel Brasil](http://slack.laravel.com.br)
 - [VueSlack](http://vueslack.com)
+- [Sencha Brasil](http://sencha-br.wemersonjanuario.com.br)
 
 > Note: Consider to send a PR to master branch.
 
