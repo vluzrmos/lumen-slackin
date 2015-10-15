@@ -88,8 +88,9 @@ Example:
 By default the system will try to detect if the browser language is available on <code>resources/lang</code>, 
 if available will setup. Available languages:
 
-* en
-* pt-br
+* English  - en
+* Porguese Brazil - pt_BR
+* German   - de_DE
 
 ## Mobile Devices
 
