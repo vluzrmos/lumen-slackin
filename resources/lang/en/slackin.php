@@ -5,7 +5,7 @@ return [
 
     'invited' => 'Invitation sent, please verify your inbox mail!',
 
-    'join' => 'Join on <b class="team-name">:team</b> on Slack.',
+    'join' => 'Join on <a href="https://:domain.slack.com"><b class="team-name">:team</b></a> on Slack.',
 
     'placeholders' => [
         'username' => 'Enter your name and last name',

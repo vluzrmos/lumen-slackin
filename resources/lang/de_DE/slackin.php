@@ -5,7 +5,7 @@ return [
 
     'invited' => 'Einladung gesendet, bitte Überprüfe deinen Posteingang!',
 
-    'join' => 'Trete <b class="team-name">:team</b> auf Slack bei.',
+    'join' => 'Trete <a href="https://:domain.slack.com"><b class="team-name">:team</b></a> auf Slack bei.',
 
     'placeholders' => [
         'username' => 'Gib deinen Vor- und Nachnamen ein.',

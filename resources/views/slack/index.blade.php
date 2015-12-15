@@ -4,11 +4,13 @@
 <div class="row">
     <div class="col-sm-8 col-sm-offset-2" >
         <div id="logo">
-            <img src="{{$team['icon']['image_132']}}" />
+            <a href="https://{{$team['domain']}}.slack.com">
+                <img src="{{$team['icon']['image_132']}}" />
+            </a>
         </div>
 
         <div id="message">
-            {!! trans('slackin.join', ['team' => $team['name']]) !!}
+            {!! trans('slackin.join', ['team' => $team['name'], 'domain' => $team['domain']]) !!}
         </div>
 
         @if(isset($totals, $totals['active'], $totals['total']))
