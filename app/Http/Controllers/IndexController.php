@@ -39,9 +39,12 @@ class IndexController extends Controller
     public function getIndex()
     {
         $data = [
-            'totals' => $this->slack->getUsersStatus(),
             'team' => $this->slack->getTeamInfo(),
         ];
+
+        if (env('SLACK_STATUS_ENABLED', true)) {
+            $data['totals'] = $this->slack->getUsersStatus();
+        }
 
         return view('slack.index', $data);
     }
