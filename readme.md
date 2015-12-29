@@ -81,7 +81,7 @@ If your need a badge to your slack invitator, just use:
 ```
 
 Example:
-[![Laravel Brasil](https://slack.laravel.com.br/badge.svg)](http://slack.laravel.com.br)
+[![Laravel Brasil](https://slack.laravel.com.br/badge.svg)](https://slack.laravel.com.br)
 
 ## Multi-Language Support
 
