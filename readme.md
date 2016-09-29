@@ -104,7 +104,6 @@ Your team are using this project? Put your link here:
 - [Laravel Brasil](https://slack.laravel.com.br)
 - [VueSlack](http://vueslack.com)
 - [Sencha Brasil](http://sencha-br.wemersonjanuario.com.br)
-- [PHP Mexico](http://phpmexico.mx)
 
 > Note: Consider to send a PR to master branch.
 
