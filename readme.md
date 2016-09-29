@@ -100,11 +100,11 @@ That project uses [Twitter Bootstrap 3](http://getbootstrap.com), and it is comp
 
 Your team are using this project? Put your link here:
 
-- [CakePHP Brasil](http://slack.cakephpbrasil.com.br/)
+- [CakePHP Brasil](http://slack.cakephpbrasil.com.br)
 - [Laravel Brasil](https://slack.laravel.com.br)
 - [VueSlack](http://vueslack.com)
 - [Sencha Brasil](http://sencha-br.wemersonjanuario.com.br)
-- [PHP Mexico](http://phpmexico.mx)
+- [PHP Mexico](http://chat.phpmexico.mx)
 
 > Note: Consider to send a PR to master branch.
 
