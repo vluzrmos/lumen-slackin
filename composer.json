@@ -5,6 +5,7 @@
     "license": "DBAD",
     "type": "project",
     "require": {
+        "ext-gd": "*",
         "illuminate/redis": "5.1.*",
         "laravel/lumen-framework": "5.1.*",
         "predis/predis": "1.0.*",
