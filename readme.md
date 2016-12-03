@@ -19,7 +19,7 @@ That application uses some of my awesome packages:
 composer create-project vluzrmos/lumen-slackin
 ```
 
-## Instalation
+## Installation
 
 Copy <code>.env.example</code> to <code>.env</code> and:
 
@@ -89,7 +89,8 @@ By default the system will try to detect if the browser language is available on
 if available will setup. Available languages:
 
 * English  - en
-* Porguese Brazil - pt_BR
+* French   - fr_FR
+* Portuguese Brazil - pt_BR
 * German   - de_DE
 
 ## Mobile Devices
