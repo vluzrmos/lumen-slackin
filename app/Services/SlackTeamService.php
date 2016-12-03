@@ -45,11 +45,14 @@ class SlackTeamService
      */
     public function inviteMember($email, $username = '')
     {
-        $this->slack->invite(
-            $email, [
-                'first_name' => $username,
-                'channels' => $this->channels->getConfigChannelsString()
-            ]
-        );
+        $options = [
+            'first_name' => $username,
+            'channels' => $this->channels->getConfigChannelsString(),
+        ];
+        $resend = config('services.slack.resend');
+        if ($resend === true) {
+            $options['resend'] = 'true';
+        }
+        $this->slack->invite($email, $options);
     }
 }
